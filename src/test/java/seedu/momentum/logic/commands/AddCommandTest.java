@@ -1,4 +1,4 @@
-package seedu.momentum.logic.commands;
+package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,6 +15,8 @@ import org.junit.jupiter.api.Test;
 
 import javafx.collections.ObservableList;
 import seedu.momentum.commons.core.GuiSettings;
+import seedu.momentum.logic.commands.AddCommand;
+import seedu.momentum.logic.commands.CommandResult;
 import seedu.momentum.logic.commands.exceptions.CommandException;
 import seedu.momentum.model.Model;
 import seedu.momentum.model.ProjectBook;

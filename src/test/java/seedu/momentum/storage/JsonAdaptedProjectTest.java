@@ -12,13 +12,16 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 import seedu.momentum.commons.exceptions.IllegalValueException;
+import seedu.momentum.model.project.Description;
 import seedu.momentum.model.project.Name;
 
 public class JsonAdaptedProjectTest {
     private static final String INVALID_NAME = "R@chel";
+    private static final String INVALID_DESCRIPTION = " ";
     private static final String INVALID_TAG = "#friend";
 
     private static final String VALID_NAME = BENSON.getName().toString();
+    private static final String VALID_DESCRIPTION = BENSON.getDescription().toString();
     private static final List<JsonAdaptedTag> VALID_TAGS = BENSON.getTags().stream()
             .map(JsonAdaptedTag::new)
             .collect(Collectors.toList());
@@ -32,15 +35,29 @@ public class JsonAdaptedProjectTest {
     @Test
     public void toModelType_invalidName_throwsIllegalValueException() {
         JsonAdaptedProject project =
-                new JsonAdaptedProject(INVALID_NAME, VALID_TAGS);
+                new JsonAdaptedProject(INVALID_NAME, VALID_DESCRIPTION, VALID_TAGS);
         String expectedMessage = Name.MESSAGE_CONSTRAINTS;
         assertThrows(IllegalValueException.class, expectedMessage, project::toModelType);
     }
 
     @Test
     public void toModelType_nullName_throwsIllegalValueException() {
-        JsonAdaptedProject project = new JsonAdaptedProject(null, VALID_TAGS);
+        JsonAdaptedProject project = new JsonAdaptedProject(null, VALID_DESCRIPTION, VALID_TAGS);
         String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Name.class.getSimpleName());
+        assertThrows(IllegalValueException.class, expectedMessage, project::toModelType);
+    }
+
+    @Test
+    public void toModelType_invalidDescription_throwsIllegalValueException() {
+        JsonAdaptedProject project = new JsonAdaptedProject(VALID_NAME, INVALID_DESCRIPTION, VALID_TAGS);
+        String expectedMessage = Description.MESSAGE_CONSTRAINTS;
+        assertThrows(IllegalValueException.class, expectedMessage, project::toModelType);
+    }
+
+    @Test
+    public void toModelType_nullDescription_throwsIllegalValueException() {
+        JsonAdaptedProject project = new JsonAdaptedProject(VALID_NAME, null, VALID_TAGS);
+        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Description.class.getSimpleName());
         assertThrows(IllegalValueException.class, expectedMessage, project::toModelType);
     }
 
@@ -49,7 +66,7 @@ public class JsonAdaptedProjectTest {
         List<JsonAdaptedTag> invalidTags = new ArrayList<>(VALID_TAGS);
         invalidTags.add(new JsonAdaptedTag(INVALID_TAG));
         JsonAdaptedProject project =
-                new JsonAdaptedProject(VALID_NAME, invalidTags);
+                new JsonAdaptedProject(VALID_NAME, VALID_DESCRIPTION, invalidTags);
         assertThrows(IllegalValueException.class, project::toModelType);
     }
 

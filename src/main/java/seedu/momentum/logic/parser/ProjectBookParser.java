@@ -10,6 +10,7 @@ import seedu.momentum.logic.commands.AddCommand;
 import seedu.momentum.logic.commands.ClearCommand;
 import seedu.momentum.logic.commands.Command;
 import seedu.momentum.logic.commands.DeleteCommand;
+import seedu.momentum.logic.commands.DescriptionCommand;
 import seedu.momentum.logic.commands.EditCommand;
 import seedu.momentum.logic.commands.ExitCommand;
 import seedu.momentum.logic.commands.FindCommand;
@@ -67,6 +68,9 @@ public class ProjectBookParser {
 
         case HelpCommand.COMMAND_WORD:
             return new HelpCommand();
+
+        case DescriptionCommand.COMMAND_WORD:
+            return new DescriptionCommandParser().parse(arguments);
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);

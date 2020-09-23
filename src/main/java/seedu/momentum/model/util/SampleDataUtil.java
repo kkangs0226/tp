@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import seedu.momentum.model.ProjectBook;
 import seedu.momentum.model.ReadOnlyProjectBook;
+import seedu.momentum.model.project.Description;
 import seedu.momentum.model.project.Name;
 import seedu.momentum.model.project.Project;
 import seedu.momentum.model.tag.Tag;
@@ -14,14 +15,17 @@ import seedu.momentum.model.tag.Tag;
  * Contains utility methods for populating {@code ProjectBook} with sample data.
  */
 public class SampleDataUtil {
+
+    public static final Description DUMMY_DESCRIPTION = new Description("DUMMY");
+
     public static Project[] getSampleProjects() {
         return new Project[] {
-            new Project(new Name("Alex Yeoh"), getTagSet("friends")),
-            new Project(new Name("Bernice Yu"), getTagSet("colleagues", "friends")),
-            new Project(new Name("Charlotte Oliveiro"), getTagSet("neighbours")),
-            new Project(new Name("David Li"), getTagSet("family")),
-            new Project(new Name("Irfan Ibrahim"), getTagSet("classmates")),
-            new Project(new Name("Roy Balakrishnan"), getTagSet("colleagues"))
+            new Project(new Name("Alex Yeoh"), DUMMY_DESCRIPTION, getTagSet("friends")),
+            new Project(new Name("Bernice Yu"), DUMMY_DESCRIPTION, getTagSet("colleagues", "friends")),
+            new Project(new Name("Charlotte Oliveiro"), DUMMY_DESCRIPTION, getTagSet("neighbours")),
+            new Project(new Name("David Li"), DUMMY_DESCRIPTION, getTagSet("family")),
+            new Project(new Name("Irfan Ibrahim"), DUMMY_DESCRIPTION, getTagSet("classmates")),
+            new Project(new Name("Roy Balakrishnan"), DUMMY_DESCRIPTION, getTagSet("colleagues"))
         };
     }
 

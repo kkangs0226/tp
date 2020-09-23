@@ -17,20 +17,26 @@ public class Project {
 
     // Identity fields
     private final Name name;
+    private final Description description;
 
     private final Set<Tag> tags = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
-    public Project(Name name, Set<Tag> tags) {
+    public Project(Name name, Description description, Set<Tag> tags) {
         requireAllNonNull(name, tags);
         this.name = name;
+        this.description = description;
         this.tags.addAll(tags);
     }
 
     public Name getName() {
         return name;
+    }
+
+    public Description getDescription() {
+        return description;
     }
 
     /**
@@ -83,6 +89,8 @@ public class Project {
     public String toString() {
         final StringBuilder builder = new StringBuilder();
         builder.append(getName())
+                .append("Description: ")
+                .append(getDescription())
                 .append(" Tags: ");
         getTags().forEach(builder::append);
         return builder.toString();

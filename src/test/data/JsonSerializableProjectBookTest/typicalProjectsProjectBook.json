@@ -2,24 +2,31 @@
   "_comment": "ProjectBook save file which contains the same Project values as in TypicalProjects#getTypicalProjectBook()",
   "projects" : [ {
     "name" : "Alice Pauline",
+    "description": "DUMMY",
     "tagged" : [ "friends" ]
   }, {
     "name" : "Benson Meier",
+    "description": "DUMMY",
     "tagged" : [ "owesMoney", "friends" ]
   }, {
     "name" : "Carl Kurz",
+    "description": "DUMMY",
     "tagged" : [ ]
   }, {
     "name" : "Daniel Meier",
+    "description": "DUMMY",
     "tagged" : [ "friends" ]
   }, {
     "name" : "Elle Meyer",
+    "description": "DUMMY",
     "tagged" : [ ]
   }, {
     "name" : "Fiona Kunz",
+    "description": "DUMMY",
     "tagged" : [ ]
   }, {
     "name" : "George Best",
+    "description": "DUMMY",
     "tagged" : [ ]
   } ]
 }
