@@ -16,7 +16,7 @@ public class PersonCard extends UiPart<Region> {
     private static final String FXML = "PersonListCard.fxml";
     public final Person person;
     @FXML
-    private Label remark;
+    private Label description;
 
     /**
      * Note: Certain keywords such as "location" and "resources" are reserved keywords in JavaFX.
@@ -54,7 +54,7 @@ public class PersonCard extends UiPart<Region> {
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
-        remark.setText(person.getRemark().value);
+        description.setText(person.getDescription().value);
     }
 
     @Override
