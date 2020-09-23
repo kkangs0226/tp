@@ -26,7 +26,7 @@ public class DescriptionCommand extends Command {
             + "Example: " + COMMAND_WORD + " 1 "
             + "d/ Likes to swim.";
 
-    public static final String MESSAGE_ADD_DESCRIPTION_SUCCESS = "Added description to Person: %1$s";
+    public static final String MESSAGE_ADD_DESCRIPTION_SUCCESS = "Added description to Project: %1$s";
     public static final String MESSAGE_INVALID_DESCRIPTION = "Invalid description";
 
     public static final String MESSAGE_ARGUMENTS = "Index: %1$d, Description: %2$s";
@@ -35,8 +35,8 @@ public class DescriptionCommand extends Command {
     private final Description description;
 
     /**
-     * @param index of the person in the filtered person list to edit the description
-     * @param description of the person to be updated to
+     * @param index of the project in the filtered project list to edit the description
+     * @param description of the project to be updated to
      */
     public DescriptionCommand(Index index, Description description) {
         requireAllNonNull(index, description);

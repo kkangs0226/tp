@@ -65,7 +65,7 @@ class DescriptionCommandTest {
     }
 
     @Test
-    public void execute_invalidPersonIndexUnfilteredList_failure() {
+    public void execute_invalidProjectIndexUnfilteredList_failure() {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredProjectList().size() + 1);
         DescriptionCommand descriptionCommand = new DescriptionCommand(outOfBoundIndex,
                 new Description(VALID_DESCRIPTION_BOB));
@@ -78,7 +78,7 @@ class DescriptionCommandTest {
      * but smaller than size of address book
      */
     @Test
-    public void execute_invalidPersonIndexFilteredList_failure() {
+    public void execute_invalidProjectIndexFilteredList_failure() {
         showProjectAtIndex(model, INDEX_FIRST_PROJECT);
         Index outOfBoundIndex = INDEX_SECOND_PROJECT;
         // ensures that outOfBoundIndex is still in bounds of address book list
