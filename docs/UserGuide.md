@@ -33,6 +33,8 @@ Momentum is a **desktop app** that **helps freelancers track time spent on diffe
    * **`delete`**`3` : Deletes the 3rd project shown in the current list.
    
    * **`sort`**`type/deadline order/asc` : Sorts the list of projects by deadline in ascending order.
+      
+   * **`undo`**`undo` : Undoes the previous sort command.
 
    * **`/exit`** : Exits the app.
 
@@ -333,6 +335,33 @@ Result: Stops the timerWrapper for the second project in the list.
 3. Momentum tracks and remembers the time recorded by the timerWrapper. This data is used to generate statistics for your
  time usage.
 
+### Undo/Redo
+Undo command undoes previous commmand and redo command redoes previously undone command.
+
+#### Undoing the previous command: `undo`
+The undo command resets the application to the state before previous command was executed.
+
+Format: `/undo`
+
+Example: `start 1`, `undo`
+
+Result: Timer for project/task at index 1 is started, then stopped and removed after undo is executed.
+
+#### Redoing the previous command: `redo`
+The redo command redoes previously undone command and resets the application to the state before the previous undo command.
+
+Format: `/redo`
+
+Example: `sort type/deadline`, `undo`, `redo`
+
+Result: Projects are sorted by deadline, then the application is reset to the sorting order before sort command was executed, then reset back to sort by deadline after redo command. 
+
+:::info
+:bulb: **Tip:**
+* Undo/redo feature keeps track of changes in state, and hence will not work on `help` command which does not change the state of the application.
+* Redo command only works if there the previous command is `undo`.
+:::
+
 #### Statistics
 Statistics are automatically generated and updated whenever projects are 
 added/deleted/changed, and when timers are started/stopped. They can be
@@ -366,4 +395,6 @@ Action | Format, Examples
 **Navigation** (_coming soon_) | `list` <br> `/project PROJECT_ID` <br> e.g., `/p 2` <br> `/settings`  
 **Start Timer** | `start PROJECT_ID` <br> e.g., `start 2`
 **Stop Timer** | `stop PROJECT_ID` <br> e.g., `stop 2`
+**Undo** | `undo`
+**Redo* | `redo`
 **Exit** | `/exit`
