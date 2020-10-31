@@ -330,12 +330,13 @@ public class AddCommandTest {
     private class ModelStubSetModelManager extends ModelStubAcceptingProjectAdded {
         private ViewMode viewMode = ViewMode.PROJECTS;
         private Project currentProject = null;
+        private Predicate<TrackedItem> currentPredicate = null;
         private final VersionedProjectBook versionedProjectBook =
-                new VersionedProjectBook(new ProjectBook(), viewMode, currentProject);
+                new VersionedProjectBook(new ProjectBook(), viewMode, currentProject, currentPredicate);
 
         @Override
         public void commitToHistory() {
-            versionedProjectBook.commit(viewMode, currentProject);
+            versionedProjectBook.commit(viewMode, currentProject, currentPredicate);
         }
     }
 }

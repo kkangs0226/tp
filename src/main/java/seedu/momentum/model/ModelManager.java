@@ -60,7 +60,7 @@ public class ModelManager implements Model {
         isCurrentSortIsByCompletionStatus = true;
         viewMode = ViewMode.PROJECTS;
 
-        this.versionedProjectBook = new VersionedProjectBook(projectBook, viewMode, currentProject);
+        this.versionedProjectBook = new VersionedProjectBook(projectBook, viewMode, currentProject, currentPredicate);
         this.reminderManager = new ReminderManager(this.versionedProjectBook);
         rescheduleReminders();
         this.viewList = this.versionedProjectBook.getTrackedItemList();
@@ -355,7 +355,7 @@ public class ModelManager implements Model {
 
     @Override
     public void commitToHistory() {
-        versionedProjectBook.commit(viewMode, currentProject);
+        versionedProjectBook.commit(viewMode, currentProject, currentPredicate);
     }
 
     @Override
@@ -369,6 +369,10 @@ public class ModelManager implements Model {
 
         // extract view mode details from ProjectBook version after undo
         viewMode = versionedProjectBook.getCurrentViewMode();
+
+        //extract predicate from ProjectBook version after undo
+        currentPredicate = versionedProjectBook.getCurrentPredicate();
+        updateFilteredProjectList(currentPredicate);
 
         resetUi(viewMode, currentProject);
         if (viewMode == ViewMode.TASKS) {
@@ -404,8 +408,10 @@ public class ModelManager implements Model {
         // extract both timer related and ViewMode details from ProjectBook version after redo
         viewMode = versionedProjectBook.getCurrentViewMode();
         currentProject = versionedProjectBook.getCurrentProject();
+        currentPredicate = versionedProjectBook.getCurrentPredicate();
 
         resetUi(viewMode, currentProject);
+        updateFilteredProjectList(currentPredicate);
         if (viewMode == ViewMode.TASKS) {
             viewTasks(currentProject);
         }
