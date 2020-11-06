@@ -65,7 +65,7 @@ public class ProjectBookWithUi extends ProjectBook {
                 && ((project == null && ((ProjectBookWithUi) other).getProject() == null)
                 || (project.equals(((ProjectBookWithUi) other).getProject())))
                 && isTagsVisible == ((ProjectBookWithUi) other).isTagsVisible())
-                && predicate.equals(((ProjectBookWithUi) other).getPredicate())
+                git && predicate.equals(((ProjectBookWithUi) other).getPredicate())
                 && userPrefs.equals(((ProjectBookWithUi) other).getUserPrefs()));
     }
 }
