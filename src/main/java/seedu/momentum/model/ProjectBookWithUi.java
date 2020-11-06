@@ -58,7 +58,7 @@ public class ProjectBookWithUi extends ProjectBook {
                 && viewMode.equals(((ProjectBookWithUi) other).getViewMode())
                 && ((project == null && ((ProjectBookWithUi) other).getProject() == null)
                 || (project.equals(((ProjectBookWithUi) other).getProject())))
-                && isTagsVisible == ((ProjectBookWithUi) other).isTagsVisible()));
-        //&& predicate.equals(((ProjectBookWithUi) other).getPredicate())));
+                && isTagsVisible == ((ProjectBookWithUi) other).isTagsVisible())
+                && predicate.equals(((ProjectBookWithUi) other).getPredicate()));
     }
 }
