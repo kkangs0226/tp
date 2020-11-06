@@ -16,19 +16,21 @@ public class ProjectBookWithUi extends ProjectBook {
     private final Predicate<TrackedItem> predicate;
     private final Comparator<TrackedItem> comparator;
     private final boolean isTagsVisible;
+    private final ReadOnlyUserPrefs userPrefs;
 
     /**
      * Constructs a {@code ProjectBookWithUi}
      */
     public ProjectBookWithUi(ReadOnlyProjectBook projectBook, ViewMode viewMode, Project project,
                              Predicate<TrackedItem> predicate, Comparator<TrackedItem> comparator,
-                             boolean isTagsVisible) {
+                             boolean isTagsVisible, ReadOnlyUserPrefs userPrefs) {
         super(projectBook);
         this.viewMode = viewMode;
         this.project = project;
         this.predicate = predicate;
         this.comparator = comparator;
         this.isTagsVisible = isTagsVisible;
+        this.userPrefs = userPrefs;
     }
 
     public ViewMode getViewMode() {
@@ -51,6 +53,10 @@ public class ProjectBookWithUi extends ProjectBook {
         return isTagsVisible;
     }
 
+    public ReadOnlyUserPrefs getUserPrefs() {
+        return userPrefs;
+    }
+
     @Override
     public boolean equals(Object other) {
         return super.equals(other) && (other == this // short circuit if same object
@@ -59,6 +65,7 @@ public class ProjectBookWithUi extends ProjectBook {
                 && ((project == null && ((ProjectBookWithUi) other).getProject() == null)
                 || (project.equals(((ProjectBookWithUi) other).getProject())))
                 && isTagsVisible == ((ProjectBookWithUi) other).isTagsVisible())
-                && predicate.equals(((ProjectBookWithUi) other).getPredicate()));
+                && predicate.equals(((ProjectBookWithUi) other).getPredicate())
+                && userPrefs.equals(((ProjectBookWithUi) other).getUserPrefs()));
     }
 }
