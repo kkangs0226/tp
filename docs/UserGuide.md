@@ -7,6 +7,7 @@ Momentum is a **desktop app** that **helps freelancers track time spent on diffe
 
 It is designed for people that prefer typing, so that frequent tasks can be done faster by typing in commands.
 
+* Table of Contents
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
@@ -33,7 +34,7 @@ It is designed for people that prefer typing, so that frequent tasks can be done
 [6. Command Summary](#command-summary)
  -->
 
-## 1. Quick Start<a name="quick-start"></a>
+## Quick Start<a name="quick-start"></a>
 
 1. Ensure you have Java `11` or above installed in your Computer.
 
@@ -152,9 +153,9 @@ You may also have to enter both dates and times together. When entered together,
 
 **Invalid**: `15:08:02T2020-08-02` (Wrong order of date and time.)
 
-## 2. Features<a name="2-Features"></a>
+## Features<a name="2-Features"></a>
 
-### 3. Projects and Tasks<a name="3-Projects-and-Tasks"></a>
+### Projects and Tasks<a name="3-Projects-and-Tasks"></a>
 
 You can add projects into Momentum to be tracked. Each project has the following information:
 
@@ -179,14 +180,14 @@ Please refer to each command for these differences.
 
 </div>
 
-#### 3.1 View Projects: `home`<a name="#31-View-Projects-home"></a>
+#### View Projects: `home`<a name="#31-View-Projects-home"></a>
 
 View all the projects being tracked by Momentum.
 This is the default view when Momentum is first opened.
 
 Format: `home`
 
-#### 3.2 Viewing a Project's Tasks: `view`<a name="#32-Viewing-a-Project's-Tasks-view"></a>
+#### Viewing a Project's Tasks: `view`<a name="#32-Viewing-a-Project's-Tasks-view"></a>
 
 View the tasks for a project.
 
@@ -197,7 +198,7 @@ Format: `view ID`
 
 Example: `view 1`
 
-#### 3.3 Creating a Project/Task: `add`
+#### Creating a Project/Task: `add`
 
 When looking at projects, this command will create a new project. When looking at the tasks in a project, this command will create a new task for the project.
 
@@ -247,7 +248,7 @@ Result: Creates a project named "Momentum" with a description "CS2103T Team Proj
 4. On 7 December 2021, at 11:01:12, the reminder panel will be shown and the reminder of the project will be removed.
 ![Walkthrough of Creating a Project Diagram Step 4](images/AddProjectDiagram4.png)
 
-#### 3.4 Editing a Project/Task: `edit`
+#### Editing a Project/Task: `edit`
 
 Edits a project or task that was been previously created.
 
@@ -295,7 +296,7 @@ Result: Updates the project with id 3. The name will be changed to "NewMomentum"
 3. A task will be updated as shown below.
 ![Walkthrough of Editing a Task Diagram Step 3](images/EditTaskDiagram3.png)
 
-#### 3.5 Deleting a Project/Task: `delete`
+#### Deleting a Project/Task: `delete`
 
 Deletes a project or task in the list.
 
@@ -309,9 +310,7 @@ Example: `delete 2`
 
 Result: Deletes the second project in the list.
 
-#### 3.6 Project/Task Organisation
-
-##### 3.6.1 View All Projects : `list`
+#### View All Projects : `list`
 
 When viewing projects, this command shows a list of all projects in Momentum.
 
@@ -321,7 +320,7 @@ Note that this command is different from the `home` command. When viewing a proj
 
 Format: `list`
 
-##### 3.6.2 Sort Projects : `sort`
+#### Sort Projects : `sort`
 
 Sorts the list of displayed projects or tasks in the application.
 
@@ -361,7 +360,7 @@ Project 1. Name: `Ant Hole`, Deadline: `2020-02-02`, Created Date: `2000-02-02`
 Project 2. Name: `Brunch`, Deadline: `2010-01-01`, Created Date: `2002-09-09`
 Project 3. Name: `Create Logo` , Deadline: `2040-04-04`, Created Date: `2001-01-01`
 
-**3.6.2.3 Sorting by Default order**
+**Sorting by Default order**
 
 Format: `sort`
 
@@ -393,7 +392,7 @@ The following walkthrough shows how a user can sort projects in Momentum by togg
 3. All projects are ordered in default ascending alphabetical order without regard for completion status.
 ![Toggle Completion Status Step 3](images/ToggleCompletionStatus3.png)
 
-###### Sorting With Only Type Specified
+##### Sorting With Only Type Specified
 
 Format: `sort type/SORT_TYPE`
 
@@ -444,7 +443,7 @@ The following walkthrough shows how a user can sort projects in Momentum by spec
 3. All projects are ordered in descending created date order.
 ![Created Descending 3](images/CreatedDescending3.png)
 
-##### Filtering Projects: `find`
+#### Filtering Projects: `find`
 
 Searches for projects or tasks in the project book based on certain parameters.
 
@@ -476,7 +475,7 @@ Search parameters are not case sensitive.
 
 </div>
 
-###### Searching by Name
+##### Searching by Name
 
 * The `n/` command checks whether a project has a certain name. There can be multiple names added to this command. For example, `n/car window` will check for the projects that contain `car` or `window` in their names.
 * Searching by name only requires a partial match. This means that a project with the name `carpet` and `car` can potentially be the result of searching for the term `car`.
@@ -490,7 +489,7 @@ The following walkthrough shows how a user can use the find command to search fo
 3. All projects that contain `ad` in their name will be shown.
 ![Find by Name Step 3](images/FindByName3.png)
 
-###### Searching by Description
+##### Searching by Description
 
 * The `d/` command checks whether a project has a certain description. There can be multiple descriptions added to this command. For example, `d/sunday october` will check for the projects that contain `sunday` or `october` in their description.
 * Searching by description only requires a partial match, similar to searching by name.
@@ -504,7 +503,7 @@ The following walkthrough shows how a user can use the find command to search fo
 3. All projects that contain `discussion` in their description will be shown.
 ![Find by Description Step 3](images/FindByDescription3.png)
 
-###### Searching by Tag
+##### Searching by Tag
 
 * The `t/` command checks whether a project has a certain tag. There can be multiple tags added to this command. For example, `t/freelance errands` will check for the projects that contain the tags `freelance` or `errands`.
 * Searching by tags will require a full word match unlike searching by name or description. This means that searching for the tag `free` will not find a project with the tag `freelance`.
@@ -525,7 +524,7 @@ The following walkthrough shows how a user can use the find command to search fo
 3. All projects that contain the tag `webdesign` will be shown.
 ![Find by Tag Step 3](images/FindByTag3.png)
 
-###### Searching by Completion Status
+##### Searching by Completion Status
 
 * There are keywords, completed and incomplete for`c/KEYWORD`. Other keywords are not accepted.
 * The `c/` command checks whether a project is completed. For example, `c/completed` will check for the projects that are completed.
@@ -540,7 +539,7 @@ The following walkthrough shows how a user can use the find command to search fo
 3. All projects that are completed will be shown.
 ![Find by Completion Step 3](images/FindByCompletion3.png)
 
-###### Searching with Multiple Parameters
+##### Searching with Multiple Parameters
 
 You can search for projects/tasks with multiple keywords for names, descriptions and tags in a single search.
 
@@ -578,14 +577,14 @@ The projects/tasks in Momentum will no longer be filtered after the `Add`, `View
 They will continue to be filtered after the `Edit` and `Delete` Commands are used.
 </div>
 
-### Time Tracking
+#### Time Tracking
 
 You can track the time you spend working on a project or task by starting a timer when you start working, and then
  stopping the timer once you finish.
 
 Momentum remembers each timer that you start/stop and uses this information to calculate statistics.
 
-#### Starting a Timer for a Project: `start`
+##### Starting a Timer for a Project: `start`
 
 Format: `/start ID`
 
@@ -613,7 +612,7 @@ Example: `/start 2`
 
 Result: Starts a timer for the second project or task in the display list.
 
-#### Stopping a Timer for a Project: `stop`
+##### Stopping a Timer for a Project: `stop`
 
 Format: `/stop ID`
 
@@ -626,7 +625,7 @@ Example: `/stop 2`
 
 Result: Stops the timer for the second project or task in the display list.
 
-#### Active Timers Panel
+##### Active Timers Panel
 
 On the left side of the window is the Active Timers Panel. This is where Momentum shows you all the timers that are
  currently running.
@@ -635,7 +634,7 @@ On the left side of the window is the Active Timers Panel. This is where Momentu
 
 This panel will show you the name of the project/task, as well as when the timer was started.
 
-#### Time Tracking Example
+##### Time Tracking Example
 
 Here is an example of how you can use the `start` and `stop` commands to track the time that you spend on a project.
 Suppose that you are going to start working on the project "Alpharad Youtube Endcard", which is the first item shown
@@ -679,7 +678,7 @@ You can perform time tracking with the following steps:
 
 ![TimerExample8](images/TimerExample8.png)
 
-## Reminders
+### Reminders
 
 * A reminder will be shown in the reminder panel of the sidebar at the date and time specified.
 * The reminder will be removed after it is shown in the sidebar.
@@ -694,15 +693,15 @@ If there are multiple reminders set at the same date and time, only one of the r
 
 </div>
 
-## Undo/Redo
+### Undo/Redo
 
 Undo command undoes previous commmand and redo command redoes previously undone command.
 
-### Undoing the Previous Command: `undo`
+#### Undoing the Previous Command: `undo`
 
 The undo command resets the application to the state before previous command was executed.
 
-Format: `/undo`
+Format: `undo`
 
 Example: `start 1`, `undo`
 
@@ -721,11 +720,11 @@ The following walkthrough shows how a user can start a timer for a project, then
 5. The timer has been removed from the project. Timer is no longer running.
 ![Undo 5](images/Undo5.png)
 
-### Redoing the Previous Command: `redo`
+#### Redoing the Previous Command: `redo`
 
 The redo command redoes previously undone command and resets the application to the state before the previous undo command.
 
-Format: `/redo`
+Format: `redo`
 
 Example: `sort type/deadline`, `undo`, `redo`
 
@@ -757,7 +756,7 @@ The following walkthrough shows how a user can start a timer for a project, then
 
 </div>
 
-## Statistics
+### Statistics
 
 Momentum uses the data collected from your timers (see [time tracking](#time-tracking)) to calculate statistics. These
  statistics are automatically generated and updated whenever you make any changes to your projects and tasks, such as
@@ -773,7 +772,7 @@ The statistics displayed correspond to the projects or tasks currently shown in 
 
 You do not need to use any additional commands to update or view the statistics.
 
-### Timeframes
+#### Timeframes
 
 Momentum only tracks your statistics within a particular timeframe. By default, the timeframe will be set to weekly.
 You can change the timeframe through the [settings](#settings).
@@ -786,7 +785,7 @@ Momentum allows you to track the time spent within these timeframes:
 
 Here are the statistics being tracked by Momentum:
 
-### Time Spent Per Project
+#### Time Spent Per Project
 
 This statistic tells you the total amount of time you have spent within the timeframe. For projects, this includes
  all the time you have spent on each individual task, as well as on the project as a whole.
@@ -799,7 +798,7 @@ The statistics are displayed in 2 different formats:
  and tasks with less time spent on them may not be shown.
 2. **Table**: Shows the exact (in minutes) amount of time spent on each project. Useful for calculations.
 
-## Settings
+### Settings
 You can adjust various settings in Momentum, which includes:
 * GUI Theme
 * Statistics Timeframe
@@ -818,7 +817,7 @@ Format: `set [th/THEME] [st/TIMEFRAME]`
 Example: `set th/light st/monthly`  
 Result: Sets a dark theme to the GUI and changes the statistics pane to show the time spent on projects within the day.
 
-### Walkthrough of Changing Application Settings
+#### Walkthrough of Changing Application Settings
 1. In order to set the GUI theme to light and the statistic timeframe to daily, enter `set th/light th/monthly` in the command box and press the `Enter` key to execute it.
  ![Settings Walkthrough Step 1](images/SettingsDiagram1.png)
 2. The result box will display a message to indicate that the command has been executed successfully.
@@ -826,7 +825,7 @@ Result: Sets a dark theme to the GUI and changes the statistics pane to show the
 3. The GUI theme has now been set to the light theme, and information in the statistics panel has been updated.
  ![Settings Walkthrough Step 3](images/SettingsDiagram3.png) 
 
-## Clear All Projects/Tasks : `clear`
+### Clear All Projects/Tasks : `clear`
 
 When viewing all projects, this command deletes all the projects in Momentum, including their tasks.
 
@@ -841,7 +840,7 @@ This command will also delete the saved data for the projects or tasks. You can 
 
 Format: `clear`
 
-## Dismissing a Reminder : `dismiss`
+### Dismissing a Reminder : `dismiss`
 
 Format: `dismiss`
 
@@ -857,7 +856,7 @@ Undo a dismissal to show an expired reminder in the project.
 
 </div>
 
-### Walkthrough of Dismissing a Reminder
+#### Walkthrough of Dismissing a Reminder
 
 This walkthrough is a followup of [Walkthrough of Creating a Project](#walkthrough-of-creating-a-project).
 
@@ -868,7 +867,7 @@ This walkthrough is a followup of [Walkthrough of Creating a Project](#walkthrou
 1. The reminder panel is now hidden.
 ![Walkthrough of Dismissing a Reminder Step 3](images/DismissDiagram3.png)
 
-## Showing and Hiding SideBar Components : `show`
+### Showing and Hiding SideBar Components : `show`
 
 You can hide or show the tags panel of the sidebar.
 
@@ -879,7 +878,7 @@ Format: `show t/`
 
 Result: Shows or Hides the tags panel of the sidebar.
 
-### Walkthrough of Hiding Tags
+#### Walkthrough of Hiding Tags
 
 1. Type `show t/` in the command box, and press the `Enter` key to execute it.
 ![Walkthrough of Hiding Tags Step 1](images/ShowDiagram1.png)
@@ -897,7 +896,7 @@ Shows a message explaning how to access the help page.
 
 Format: `help`
 
-## Exiting the Program : `exit`
+### Exiting the Program : `exit`
 
 All project, task and timer data are saved automatically after every command. There is no need to save manually.
 

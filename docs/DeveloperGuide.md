@@ -4,7 +4,7 @@ title: Developer Guide
 ---
 
 * Table of Contents
-  {:toc}
+{:toc}
 
 ---
 
@@ -55,6 +55,10 @@ Each of the four components,
 For example, the `Logic` component (see the class diagram given below) defines its API in the `Logic.java` interface and exposes its functionality using the `LogicManager.java` class which implements the `Logic` interface.
 
 ![Class Diagram of the Logic Component](images/LogicClassDiagram.png)
+
+<img src="images/LogicClassDiagram.png" width="1000"/>
+
+<img src="images/LogicClassDiagram.png" width="2000"/>
 
 **How the architecture components interact with each other**
 
@@ -455,11 +459,9 @@ The following sequence diagram shows how the `FindCommandParser`works. Note that
 
 #### Chaining Predicates based on Find Type
 
-The process of creating and chaining predicates varies based on the `FindType` selected. The following activity diagrams show this process for each `FindType`.
+The process of creating and chaining predicates varies based on the `FindType` selected. The following activity diagrams show this process for the various `FindType`s.
 
-| ![FindAny](images/FindAny.png) | ![FindAll](images/FindAll.png) | ![FindNone](images/FindNone.png)|
-|:---:|:---:|:---:|
-|Find Any|Find All|Find None|
+| ![CombinePredicatesActivityDiagram](images/CombinePredicatesActivityDiagram.puml)
 
 Note that `FindType.NONE` uses the logical AND when combining predicates. This is because individual predicates test for a negative match result. These negative results need to be chained together using the logical AND because a negative match requires a project to not match every keyword.
 
