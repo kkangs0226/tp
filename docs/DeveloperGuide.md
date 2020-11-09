@@ -749,6 +749,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`    | new user                                    | start and stop a timer for a project | track the time I spent on the project                                   |
 | `* *`    | user                                        | see the amount of time I spend on each project | gain insights on how I am using my time |
 | `* *`    | user | can create tasks within a project    | better organize my work
+| `*`      | user | can change the way the UI looks  | have the application more personalised to me
+| `* *`      | user | can adjust the timeframe of the statistics shown | gain even better insights on how I am using my time in different timeframes. 
 
 ### Use cases
 
@@ -878,6 +880,31 @@ The use cases for deleting a task is similar to deleting a project.
 * *a. The arguments are given in an incorrect format.
 
   * a1. Momentum shows an error message.
+
+    Use case ends.
+
+#### **Use case: Changing application settings**
+
+**MSS**
+
+1. User requests to change theme settings.
+2. Momentum updates the user preferences.
+3. Momentum reflects the changes in the application GUI.
+4. User requests to change statistic timeframe settings.
+5. Momentum updates the user preferences.
+6. Momentum reflects the changes in the application GUI.
+
+    Use case ends.
+
+**Extensions**
+* 1a. The given theme is invalid.
+
+  * 1a1. Momentum shows an error message.
+
+    Use case ends
+* 4a. The given timeframe is invalid.
+
+  * 4a1. Momentum shows an error message.
 
     Use case ends.
 
