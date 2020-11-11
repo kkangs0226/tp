@@ -165,7 +165,8 @@ When you first open Momentum, you will see all the projects being tracked in Mom
 
 <div markdown="block" class="alert alert-info">
 
-**:information_source: Most commands in Momentum will do different things depending on whether you are viewing projects or tasks.**<br>
+**:bulb: Most commands in Momentum will do different things depending on whether you are viewing projects or tasks
+.**<br>
 Please refer to each command for these differences.
 
 </div>
@@ -780,11 +781,13 @@ Momentum uses the data collected from your timers (see [time tracking](#time-tra
  These statistics can be seen in a panel on the left side of the window, as shown here:
 
 ![StatisticsUI1](images/StatsUI1.png)
+Figure X: Location of the statistics panel
 
 The statistics displayed correspond to the projects or tasks currently shown in the list, and will automatically
  change when the items in the list changes (such as when you find specific projects or sort the list of projects).
 
 ![StatisticsUI2](images/StatsUI2.png)
+Figure X: The order of the statistics entries matches the order in the display list.
 
 You do not need to use any additional commands to update or view the statistics.
 
@@ -807,6 +810,7 @@ This statistic tells you the total amount of time you have spent within the time
  all the time you have spent on each individual task, as well as on the project as a whole.
 
 ![StatsUISplit](images/StatsUISplit.png)
+Figure X: Breakdown of the statistics panel.
 
 {% include image.html url="images/StatsUISplit.png" description="Figure X" %}
 
