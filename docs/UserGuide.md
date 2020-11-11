@@ -949,12 +949,12 @@ Result: Exits the program.
 **Q**: How do I transfer my data to another Computer? <br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Momentum home folder.
 
-**Q**: Momentum is showing "Dates and Times should be in ISO8601 format. e.g. 2020-09-23T16:55:12". Whats wrong?
+**Q**: Momentum is showing "Dates and Times should be in ISO8601 format. e.g. 2020-09-23T16:55:12". Whats wrong? <br>
 **A**: You have entered a date and/or time in the wrong format. Please refer to the [date and time terms](#date-and-time-terms) for the correct format to use.
  and time format.
 
-**Q**: Momentum showing "Unknown Command". Whats wrong?
-**A**: 
+**Q**: Momentum showing "Unknown Command". Whats wrong? <br>
+**A**: You have entered a command that is not recognised by Momentum. Please refer to [command summary](#command-summary) for a list of commands that you can enter into Momentum.
 
 --------------------------------------------------------------------------------------------------------------------
 
