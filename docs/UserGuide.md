@@ -808,6 +808,8 @@ This statistic tells you the total amount of time you have spent within the time
 
 ![StatsUISplit](images/StatsUISplit.png)
 
+{% include image.html url="images/StatsUISplit.png" description="Figure X" %}
+
 The statistics are displayed in 2 different formats:
 
 1. **Pie Chart**: Shows the relative time spent on each project. Useful for comparing different projects and tasks. Projects
