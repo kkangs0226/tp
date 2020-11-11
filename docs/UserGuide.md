@@ -161,7 +161,8 @@ Apart from the name, all other information is optional.
 
 Each project can also contain several tasks, each with the same information as a project.
 
-When you first open Momentum, you will see all the projects being tracked in Momentum. You can then view the tasks for each project separately.
+When you first open Momentum, you will see all the projects being tracked in Momentum. You can then view the tasks
+ for each project separately. seperately using the [view command](#viewing-a-projects-tasks-view)]
 
 <div markdown="block" class="alert alert-info">
 
@@ -171,16 +172,16 @@ Please refer to each command for these differences.
 
 </div>
 
-#### View Projects: `home`<a name="#31-View-Projects-home"></a>
+#### View Projects: `home`
 
 Done by: Farrell Nah Jun Hao
 
 View all the projects being tracked by Momentum.
-This is the default view when Momentum is first opened.
+This is the default view you will see when Momentum is first opened.
 
 Format: `home`
 
-#### Viewing a Project's Tasks: `view`<a name="#32-Viewing-a-Project's-Tasks-view"></a>
+#### Viewing a Project's Tasks: `view`
 
 Done by: Farrell Nah Jun Hao
 
@@ -319,11 +320,16 @@ Result: Deletes the second project or task in the list.
 
 Done by Farrell Nah Jun Hao
 
-When viewing projects, this command shows a list of all projects in Momentum.
+When you are viewing projects, this command shows you a list of all projects in Momentum.
 
-When viewing a project's tasks, this command shows a list of all the tasks for the project.
+When you are viewing a project's tasks, this command shows you a list of all the tasks for the project.
 
-Note that this command is different from the `home` command. When viewing a project's tasks, the `home` command will change the view to show all the projects being tracked by Momentum. However, the `list` will only show all the tasks for the project.
+<div markdown="block" class="alert alert-info">
+
+:bulb:
+Note that this command is different from the `home` command. When viewing a project's tasks, the `home` command will change the view to show you all the projects being tracked by Momentum. However, the `list` will only show you all the tasks for the project.
+
+</div>
 
 Format: `list`
 
@@ -590,8 +596,7 @@ They will continue to be filtered after the `Edit` and `Delete` Commands are use
 
 Done by Farrell Nah Jun Hao
 
-You can track the time you spend working on a project or task by starting a timer when you start working, and then
- stopping the timer once you finish.
+You can track the time you spend working on a project or task by starting a timer when you start working, and then stopping the timer once you finish.
 
 Momentum remembers each timer that you start/stop and uses this information to calculate statistics.
 
@@ -606,16 +611,15 @@ Format: `start ID`
 
 <div markdown="block" class="alert alert-info">
 
-:bulb: **Tip:**
+:bulb:
 You can run timers for more than one project or task concurrently, if you are multi-tasking.
 
 </div>
 
 <div markdown="block" class="alert alert-info">
 
-:bulb: **Tip:**
-You can run timers for a project separately from its tasks. This allows you to track the time you spent on the
- project as a whole, as well as the time spent on each individual task.
+:bulb:
+You can run timers for a project separately from its tasks. This allows you to track the time you spent on the project as a whole, as well as the time spent on each individual task.
 
 </div>
 
@@ -638,24 +642,23 @@ Result: Stops the timer for the second project or task in the display list.
 
 #### Active Timers Panel
 
-On the left side of the window is the Active Timers Panel. This is where Momentum shows you all the timers that are
- currently running.
+On the left side of the window is the Active Timers Panel. This is where Momentum shows you all the timers that are currently running.
 
 ![ActiveTimersUI](images/ActiveTimersUI.png)
+Figure X: Location of the Active Timers Panel.
 
 This panel will show you the name of the project/task, as well as when the timer was started.
 
 #### Time Tracking Example
 
 Here is an example of how you can use the `start` and `stop` commands to track the time that you spend on a project.
-Suppose that you are going to start working on the project "Alpharad Youtube Endcard", which is the first item shown
- below:
+Suppose that you are going to start working on the project "Alpharad Youtube Endcard", which is the first item shown below:
 
 ![TimerExample1](images/TimerExample1.png)
 
 You can perform time tracking with the following steps:
 
-1. To start the timer, type `start 1` into the command box and press `Enter`.
+1. To start the timer, type `start 1` into the command box and press <kbd>Enter</kbd>.
 
     ![TimerExample2](images/TimerExample2.png)
 
@@ -667,19 +670,19 @@ You can perform time tracking with the following steps:
 
     ![TimerExample4](images/TimerExample4.png)
 
-4. Now that the timer has been successfully started, you can proceed to do your work. You can also choose to close
+   Now that the timer has been successfully started, you can proceed to do your work. You can also choose to close
  Momentum. The timer will continue to run even when Momentum is closed. Proceed to the next step when you are done
   with your work.
 
-5. To stop the timer, type `stop 1` into the command box and press `Enter`.
+4. To stop the timer, type `stop 1` into the command box and press `Enter`.
 
     ![TimerExample5](images/TimerExample5.png)
 
-6. You should see the following message in the result box, indicating that the timer has been successfully stopped.
+5. You should see the following message in the result box, indicating that the timer has been successfully stopped.
 
     ![TimerExample6](images/TimerExample6.png)
 
-7. You should also see that the project has been removed from the active timers panel:
+6. You should also see that the project has been removed from the active timers panel:
 
     ![TimerExample7](images/TimerExample7.png)
 
@@ -777,14 +780,14 @@ Done by Farrell Nah Jun Hao
 
 Momentum uses the data collected from your timers (see [time tracking](#time-tracking)) to calculate statistics. These
  statistics are automatically generated and updated whenever you make any changes to your projects and tasks, such as
-  when timers for a project/task are started or stopped.
+  when you start or stop a new timer.
  These statistics can be seen in a panel on the left side of the window, as shown here:
 
 ![StatisticsUI1](images/StatsUI1.png)
 Figure X: Location of the statistics panel
 
-The statistics displayed correspond to the projects or tasks currently shown in the list, and will automatically
- change when the items in the list changes (such as when you find specific projects or sort the list of projects).
+The statistics displayed correspond to the projects or tasks currently shown in the display list, and will automatically
+ change when the items in the display list changes (such as when you find specific projects or sort the list of projects).
 
 ![StatisticsUI2](images/StatsUI2.png)
 Figure X: The order of the statistics entries matches the order in the display list.
@@ -793,14 +796,15 @@ You do not need to use any additional commands to update or view the statistics.
 
 #### Timeframes
 
-Momentum only tracks your statistics within a particular timeframe. By default, the timeframe will be set to weekly.
-You can change the timeframe through the [settings](#settings).
+Momentum only tracks your statistics within a particular timeframe. You can change the timeframe through the [settings](#settings).
 
 Momentum allows you to track the time spent within these timeframes:
 
 * Daily
 * Weekly
 * Monthly
+
+By default, the timeframe will be set to weekly.
 
 Here are the statistics being tracked by Momentum:
 
@@ -810,9 +814,7 @@ This statistic tells you the total amount of time you have spent within the time
  all the time you have spent on each individual task, as well as on the project as a whole.
 
 ![StatsUISplit](images/StatsUISplit.png)
-Figure X: Breakdown of the statistics panel.
-
-{% include image.html url="images/StatsUISplit.png" description="Figure X" %}
+Figure X: Sections of the statistics panel.
 
 The statistics are displayed in 2 different formats:
 
@@ -854,13 +856,18 @@ Result: Sets a dark theme to the GUI and changes the statistics pane to show the
 
 Done by Farrell Nah Jun Hao
 
-When viewing all projects, this command deletes all the projects in Momentum, including their tasks.
+When you are viewing all projects, this command deletes all the projects in Momentum, including their tasks.
 
-When viewing a specific project's tasks, this command will delete all the tasks in the project. The project itself will not be deleted.
+When you are viewing a specific project's tasks, this command will delete all the tasks in the project. The project
+ itself will not be deleted.
 
 <div markdown="block" class="alert alert-danger">
-:warning: **Warning**
-This command will also delete the saved data for the projects or tasks. You can undo this operation while Momentum remains open. However, you will not be able to undo this once you close Momentum.
+:warning:
+This command will also delete the saved data. 
+You can undo this operation while Momentum remains open. 
+However, you will not be able to undo this once you close Momentum.
+
+Please be careful when using this command, as you may loose large amounts of your data.
 
 </div>
 
@@ -942,7 +949,12 @@ Result: Exits the program.
 **Q**: How do I transfer my data to another Computer? <br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Momentum home folder.
 
---------------------------------------------------------------------------------------------------------------------
+**Q**: Momentum is showing "Dates and Times should be in ISO8601 format. e.g. 2020-09-23T16:55:12". Whats wrong?
+**A**: You have entered a date and/or time in the wrong format. Please refer to the [date and time terms](#date-and-time-terms) for the correct format to use.
+ and time format.
+
+**Q**: Momentum showing "Unknown Command". Whats wrong?
+**A**: 
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -950,6 +962,7 @@ Result: Exits the program.
 
 * **Command Line Interface(CLI)**: Command Line Interface processes commands in the form of text
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
+* **Window**: The area of your computer's screen that displays the [user interface](#user-interface-overview) of Momentum
 * **Project View**: View all projects in the project book.
 * **Task View**: View all tasks that are added to a single project.
 
