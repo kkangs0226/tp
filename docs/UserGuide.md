@@ -11,28 +11,35 @@ It is designed for people that prefer typing, so that frequent tasks can be done
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
+## About This Document
+This user guide provides detailed explanation and walkthroughs on the features and functionalities of Momentum. If you wish to learn how to use Momentum, this guide is for you. Before proceeding on, here are a few things you should take note about this document.
 
-<!-- # Table of contents
-[1. Quick Start](#quick-start)
-[2. Navigating the User Guide]
-    [2.1  UI Overview]
-    [2.2  Command Format]
-    [2.3  Date and Time Formats]
-[3. Features](#3-Features)
-    [3.1 Projects and Tasks] add/edit/delete/clear/list/view/home
-    [3.2  Finding Projects and Tasks]
-    [3.3  Sorting Projects and Tasks]
-    [3.4 Time Tracking]
-    [3.5  Reminders]
-    [3.6  Undo/Redo]
-    [3.7 Statistics](#statistics)
-    [3.8 Settings](#settings)
-    [3.9 Show and Hide SideBar Components : show](#show)
-    [3.10 Exiting the Program : exit](exit)
-[4. FAQ](#Faq)
-[5. Glossary](#Glossary)
-[6. Command Summary](#command-summary)
- -->
+### Notations Used
+Throughout this document, you may come across these notations:
+
+* **Clickable Links**: Words or phrases that are blue in colour are links which you can click on that will take you over to the section or page as describe. For example, clicking on [this]() will take you back to the introduction of the user guide.
+
+* **Info Boxes**: These will display additional information that is good for you to know. There are two types of boxes, tip and warning boxes, and they are showed below:
+
+  <div markdown="block" class="alert alert-info">
+  
+  :bulb: These are tip boxes. They will provide you with useful tips.
+
+  </div>
+
+  <div markdown="block" class="alert alert-danger">
+  
+  :warning: These are warning boxes. They will contain information of things that you should be careful of.
+
+  </div>
+
+* **Keyboard Keys**: Words that are wrapped in a box like <kbd>this</kbd> points to a corresponding key on your keyboard.
+
+### Complex Terms
+Are we still hyperlinking those terms to the glossary?
+
+### Screenshots
+Screenshots of the application in this document shows the application being used in a macOS operating system. However, note that this application can be used on other major operating systems as well.
 
 ## Quick Start<a name="quick-start"></a>
 
@@ -45,30 +52,31 @@ It is designed for people that prefer typing, so that frequent tasks can be done
 4. Double-click the file to start Momentum. The GUI similar to below should appear in a few seconds. <br>
    ![Ui](images/Ui.png)
 
-5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
+5. Type the command in the command box and press `Enter` to execute it. e.g. typing `help` and pressing `Enter` will open the help window.<br>
+
    Some example commands you can try:
 
-   * **`view`**`1` : View the tasks of project at index 1.
+   * `view 1` : View the tasks of project at index 1.
 
-   * **`home`** : Go to home.
+   * `home` : Go to home.
 
-   * **`add`**`n/Momentum d/CS2103T Team Project` : Add a project named `Momentum` to the Project Book in project view. Add a task named `Momentum` to the project in task view.
+   * `add n/Momentum d/CS2103T Team Project` : Add a project named `Momentum` to the Project Book in project view. Add a task named `Momentum` to the project in task view.
 
-   * **`edit`**`3 n/NewMomentum d/newDescription` : Update the 3rd project/task in the current list. The name will be changed to "NewMomentum" and the description will be changed to "NewDescription".
+   * `edit 3 n/NewMomentum d/newDescription` : Update the 3rd project/task in the current list. The name will be changed to "NewMomentum" and the description will be changed to "NewDescription".
 
-   * **`delete`**`3` : Delete the 3rd project/task shown in the current list.
+   * `delete 3` : Delete the 3rd project/task shown in the current list.
 
-   * **`find`**`n/NewMomentum` : Find a project/task that has `NewMomentum` in its name.
+   * `find n/NewMomentum` : Find a project/task that has `NewMomentum` in its name.
 
-   * **`list`** : List all projects or tasks based on the current view mode.
+   * `list` : List all projects or tasks based on the current view mode.
 
-   * **`sort`**`type/deadline order/asc` : Sort the list of projects/tasks by deadline in ascending order.
+   * `sort type/deadline order/asc` : Sort the list of projects/tasks by deadline in ascending order.
 
-   * **`start`**`1` : Start the timer of project/task at index 1.
+   * `start 1` : Start the timer of project/task at index 1.
 
-   * **`stop`**`1` : Stop the timer of project/task at index 1.
+   * `stop 1` : Stop the timer of project/task at index 1.
 
-   * **`exit`** : Exit the app.
+   * `exit` : Exit the app.
 
 Refer to the [Features](#features) below for a more comprehensive set of features available in Momentum.
 
@@ -76,28 +84,49 @@ Refer to the [Features](#features) below for a more comprehensive set of feature
 
 ## User Interface Overview
 
-Momentum uses a GUI (Graphical User Interface) to get input from you, and display information to you. Different parts of this GUI perform different functions, as explained below:
+Momentum uses a graphical user interface (GUI) to interact with you. This is where you will give your inputs, and where Momentum will display information to you. This section will give you a walkthrough on the GUI of Momentum.
+
+### User Interface Components
+
+The GUI is made up of multiple components, which is shown in Figure X below.
 
 ![OverviewUI](images/OverviewUI2.png)
+Figure X: GUI of Momentum with different components marked out.
 
-1. **Command Box**: The place where you enter in your commands.
-2. **Results Box**: Displays the result of executing the commands that you enter.
-3. **Display List**: Displays a list of projects or tasks.
-4. **Reminders Panel**: This is where reminders will appear. The panel will only be present when there are reminders that have not yet been dismissed.
-5. **Active Timers Panel**: Displays all the timers that are currently running.
+With reference to the numbered labels in Figure X, these are the GUI components and their functions:
+
+1. **Menu Bar**: The menu bar allows you to exit the application, or view this document. To exit the application, click on the `File` button and select "Exit". To view this document, click on the `Help` button and select "User Guide". A window containing the website address to this guide should appear.
+
+2. **Command Box**: This is where you will enter in your commands. After typing your command, hit <kbd>Enter</kbd> to execute them. If you enter an invalid command, your input will turn red.
+
+3. **Result Box**: This is where Momentum will give you feedback on commands that you execute.
+
+4. **Display List**: Displays a list your projects or tasks and all the information pertaining to them.
+
+5. **Reminders Panel**: This is where your reminders will appear. The panel will only show when you have reminders that have not yet been dismissed. (see [Reminders](#reminders))
+
+6. **Active Timers Panel**: Displays a list of all your running timers.
 (see [Active Timers Panel](#active-timers-panel))
-6. **Statistics Panel**: Displays the statistics data calculated by Momentum.
-(see [Statistics](#statistics))
-7. **Tags Panel**: Displays a collection of all the tags visible in the display list.
-8. **Bottom Bar**: Displays contextual information about what you are viewing, such as the specific project that you are viewing, and the number of items in the display list hidden due to finding or sorting commands.
 
-The active timers, statistics, tags and reminders panels can be resized to display more information by clicking and draging their edges.
+7. **Statistics Panel**: Displays the statistics of your time usage calculated by Momentum. (see [Statistics](#statistics))
+
+8. **Tags Panel**: Shows a collection of all the tags that are currently present in the display list.
+
+9. **Bottom Bar**: Information about what you are currently viewing on the display list will be shown here. The left side of the bar tells you which project you are viewing, and the right side of the bar tells you how many items are present on the display list, out of the total number of items that you have.  
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: The active timers, statistics and tags panels can be resized so that they can show more information. To do so, click and drag the edges dividing the panels upwards or downwards.
+
+</div>
 
 ### User Interface Theme
 
-The GUI Momentum also comes with two themes, light and dark. These themes are shown below:
-![GUI Themes](images/GUIThemeDiagram.png)
-You can adjust the themes to your preference, by changing it in the application settings. (see [Settings](#settings))
+The GUI of Momentum also comes with two themes, Light and Dark. These themes are merely cosmetic and do not affect the application functionality in any way. The themes are shown below:
+![GUI Themes](images/UITheme.png)
+Figure X: Momentum GUI theme
+
+By default, the theme of Momentum is set to Dark. If you want to adjust the theme, you can do so by changing it in the application settings. (see [Settings](#settings))
 
 ## Command Format
 
@@ -112,7 +141,7 @@ Below is an explanation of the formatting used to show commands:
 * Items with `…` inside square brackets `[t/TAG [MORE_TAGS]...]` can take in multiple space separated arguments
   e.g. `[[t/TAG [MORE_TAGS]...]` can represent `t/friend friend family`.
 * Parameters can be in any order.
-  e.g. If the command specifies `n/NAME dd/2020-11-05`, `dd/2020-11-05 n/NAME` is also acceptable.
+  e.g. If the command specifies `n/Blog Design dd/2020-11-05`, `dd/2020-11-05 n/Blog Design` is also acceptable.
 
 ## Date and Time Terms
 
@@ -148,11 +177,11 @@ SS   | Second  | `03`
 
 **Valid**: `15:08:02`
 
-**Invalid**: `15:8:2` (Wrong number of digits.)
+**Invalid**: `15:8:2` Wrong number of digits.
 
-**Invalid**: `8:15:2` (Wrong order of hour, minute and second.)
+**Invalid**: `8:15:2` Wrong order of hour, minute and second.
 
-**Invalid**: `03:08:02PM` (Only 24 hour time is accepted.)
+**Invalid**: `03:08:02PM` Only 24 hour time is accepted.
 
 ### Combining Date and Time
 
@@ -160,11 +189,19 @@ You may also have to enter both dates and times together. When entered together,
 
 **Valid**: `2020-08-02T15:08:02`
 
-**Invalid**: `15:08:02T2020-08-02` (Wrong order of date and time.)
+**Invalid**: `15:08:02T2020-08-02` Wrong order of date and time.
+
+## `ID` Term
+
+* You need to enter an id which refers to the id number shown in the displayed project/task list.
+
+* You need to enter a **positive integer** such as 1, 2, 3, …​
 
 ## Features<a name="2-Features"></a>
 
 ### Projects and Tasks<a name="3-Projects-and-Tasks"></a>
+
+Done by: Farrell Nah Jun Hao
 
 You can add projects into Momentum to be tracked. Each project has the following information:
 
@@ -180,158 +217,295 @@ Apart from the name, all other information is optional.
 
 Each project can also contain several tasks, each with the same information as a project.
 
-When you first open Momentum, you will see all the projects being tracked in Momentum. You can then view the tasks for each project separately.
+When you first open Momentum, you will see all the projects being tracked in Momentum. You can then view the tasks
+ for each project separately. seperately using the [view command](#viewing-a-projects-tasks-view)]
 
 <div markdown="block" class="alert alert-info">
 
-**:information_source: Most commands in Momentum will do different things depending on whether you are viewing projects or tasks.**<br>
+**:bulb: Most commands in Momentum will do different things depending on whether you are viewing projects or tasks
+.**<br>
 Please refer to each command for these differences.
 
 </div>
 
-#### View Projects: `home`<a name="#31-View-Projects-home"></a>
+#### Viewing a Project's Tasks: `view`
 
-View all the projects being tracked by Momentum.
-This is the default view when Momentum is first opened.
-
-Format: `home`
-
-#### Viewing a Project's Tasks: `view`<a name="#32-Viewing-a-Project's-Tasks-view"></a>
+Done by: Farrell Nah Jun Hao
 
 View the tasks for a project.
 
 Format: `view ID`
 
-* The id refers to the id number shown in the displayed project list.
-* The id **must be a positive integer** 1, 2, 3, …​
+* You can refer to [`ID` Term](#id-term) for more information.
 
 Example: `view 1`
 
+##### Walkthrough of viewing a project's tasks
+Suppose you would like to view the tasks belonging to the 2nd project in the list
+
+![View1](images/View1.png)
+
+1. Type `view 1` into the command box and press <kbd>Enter</kbd>
+
+    ![View2](images/View2.png)
+
+2. The results box will display a message to indicate that you have successfully changed your view. You should see the tasks belonging to the project in the display list.
+
+    ![View3](images/View3.png)
+    
+#### View Projects: `home`
+
+Done by: Farrell Nah Jun Hao
+
+View all the projects being tracked by Momentum.
+This is the default view you will see when Momentum is first opened.
+
+Format: `home`
+
+##### Walkthrough of viewing projects
+Suppose you are in task view, and would like to go to project view.
+
+![Home0](images/Home0.png)
+
+1. Type `home` into the command box and press <kbd>Enter</kbd>
+
+    ![Home1](images/Home1.png)
+
+2. The results box will display a message to indicate that you have successfully changed your view. You should see the tasks belonging to the project in the display list.
+
+    ![Home2](images/Home2.png)
+
+
 #### Creating a Project/Task: `add`
 
-When looking at projects, this command will create a new project. When looking at the tasks in a project, this command will create a new task for the project.
+Done by: Cheong Ying Yi Clara
+
+When Momentum is in [project view](#glossary), you can use the add command to create a new project. When Momentum is in [task view](#glossary), you can use the add command to create a new task for the project that you are viewing.
 
 Format: `add n/NAME [d/DESCRIPTION] [c/] [dd/DEADLINE_DATE [dt/DEADLINE_TIME]] [r/REMINDER_DATE_TIME] [t/TAG]`
 
 * `n/NAME`
-  * Name can contain alphanumeric characters (a-Z, 0-9) and spaces.
+
+  * You can enter alphanumeric characters (a-Z, 0-9) and spaces for names. <br>
+
 * `[d/DESCRIPTION]`
-  * There is no restriction imposed on descriptions.
+
+  * You can enter any character for descriptions.
+
+  <div markdown="block" class="alert alert-info">
+
+  :bulb: You can enter an empty description.
+
+  </div>
+
 * `[c/]`
-  * The project is incomplete by default, adding `c/` will set the completion status to complete.
+
+  * The project/task added will be incomplete by default.
+
+  * You can add a project/task with completion status complete by entering `c/`. <br>
+
 * `[dd/DEADLINE_DATE [dt/DEADLINE_TIME]]`
-  * The `dt\DEADLINE_TIME` is part of the the prefix `dd/`, and is optional.
-  * A deadline cannot contain only the time field, but a deadline can contain only the date field.
-  * The format for date of the deadline is YYYY-MM-DD, refer to [Date Terms](#Date-Terms) for more information on YYYY, MM and DD.
-  * The format for time of the deadline is HH:MM:SS in 24 hour format, refer to [Time Terms](#Time-Terms) for more information on HH, MM and SS.
-  * The date of the deadline cannot be earlier than the creation date of the project.
+
+  * Note that `dt/DEADLINE_TIME` is an optional part of the the `dd/`. You cannot enter a deadline with time only.
+
+  * You can enter a deadline with date only.
+
+  * You need to enter the date of the deadline using YYYY-MM-DD format. (refer to [Date Terms](#date-terms) for more information on YYYY, MM and DD)
+
+  * You need to enter the time of the deadline using HH:MM:SS format in 24 hours. (refer to [Time Terms](#time-terms) for more information on HH, MM and SS)
+
+  <div markdown="block" class="alert alert-danger">
+
+  :warning: You cannot enter a date earlier than the creation date of the project/task for deadlines.
+
+  </div>
+
 * `[r/REMINDER_DATE_TIME]`
-  * Both date and time is compulsory for a reminder.
-  * The format for date and time of the reminder is YYYY-MM-DDTHH:MM:SS, refer to [Date and Time Terms](#Date-and-Time-Terms) for more information on YYYY, MM, DD, HH, MM, and SS.
-  * The date and time of the reminder needs to be later than the current time, refer to [Reminders](#reminders) section for more details on reminders.
+
+  * You need to enter both date and time for a reminder.
+
+  * You need to enter date and time of the reminder using YYYY-MM-DDTHH:MM:SS format. (refer to [Date and Time Terms](#Date-and-Time-Terms) for more information on YYYY, MM, DD, HH, MM, and SS)
+
+  <div markdown="block" class="alert alert-info">
+
+  :bulb: `T` separates the date and time in a reminder.
+
+  </div>
+
+  <div markdown="block" class="alert alert-danger">
+
+  :warning: You cannot enter a date and time earlier than the current date and time for reminders. (refer to [Reminders](#reminders) for more details on reminders)
+
+  </div>
+
 * `[t/TAG]`
-  * Similar to names, tags can contain alphanumeric characters (a-Z, 0-9) and spaces.
 
-<div markdown="block" class="alert alert-info">
+  * Similar to names, you can enter alphanumeric characters (a-Z, 0-9) and spaces in tags.
 
-:bulb: **Tip:**
+  <div markdown="block" class="alert alert-info">
 
-* Projects and tasks can have any number of tags (including 0).
-* A project can have an empty description.
-* `T` separates the date and time in a reminder.
+  :bulb: You can enter any number of tags, including 0.
 
-</div>
+  </div>
 
 Example: `add n/Momentum d/CS2103T Team Project dd/2021-12-07 dt/11:01:12 r/2021-12-07T11:01:12 t/impt`
 
-Result: Creates a project named "Momentum" with a description "CS2103T Team Project", a tag "impt", deadline date "2020-10-07" with deadline time "11:01:12" and reminder "2020-10-07T11:01:12".
+Result: Momentum will create a project/task named "Momentum", with description "CS2103T Team Project", deadline date "2020-10-07" as well as deadline time "11:01:12", reminder "2020-10-07T11:01:12", and tag "impt".
 
 ##### Walkthrough of Creating a Project
 
-1. Type `add n/Momentum d/CS2103T Team Project c/ dd/2021-12-07 dt/11:01:12 r/2021-12-07T11:01:12 t/impt` in the command box, and press the `Enter` key to execute it.
+1. You can type `add n/Momentum d/CS2103T Team Project c/ dd/2021-12-07 dt/11:01:12 r/2021-12-07T11:01:12 t/impt` in the command box, and press the <kbd>Enter</kbd> key to execute it.
 ![Walkthrough of Creating a Project Diagram Step 1](images/AddProjectDiagram1.png)
-2. The result box will display a message to indicate that the command has been executed successfully.
+
+2. The result box will display a message to indicate that you executed the command successfully.
 ![Walkthrough of Creating a Project Diagram Step 2](images/AddProjectDiagram2.png)
-3. A project will be added to the project list as shown below.
+
+3. You added a project to the project list as shown below.
 ![Walkthrough of Creating a Project Diagram Step 3](images/AddProjectDiagram3.png)
-4. On 7 December 2021, at 11:01:12, the reminder panel will be shown and the reminder of the project will be removed.
+
+4. On 7 December 2021, at 11:01:12, the reminder panel will show the reminder you added and the reminder of the project will be removed.
 ![Walkthrough of Creating a Project Diagram Step 4](images/AddProjectDiagram4.png)
 
 #### Editing a Project/Task: `edit`
 
-Edits a project or task that was been previously created.
+Done by Cheong Ying Yi Clara
+
+When Momentum is in [project view](#glossary), you can use the edit command to edit a project. When Momentum is in [task view](#glossary), you can use the edit command to edit a task for the project that you are viewing.
 
 Format: `edit ID [n/NAME] [d/DESCRIPTION] [c/] [dd/DEADLINE_DATE [dt/DEADLINE_TIME]] [r/REMINDER_DATE_TIME] [t/TAG]`
 
-* At least one of the optional fields must be provided.
-* Existing values will be updated to the input values.
-* You can remove a description, deadline or reminder by typing `d/` or `dd/` or `r/` without specifying anything after it.
+* You need to provide at least one of the optional fields.
 
-* ID
-  * The id refers to the id number shown in the displayed list.
-  * The id **must be a positive integer** 1, 2, 3, …​
+* Your input will override the existing values of the project/task edited.
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: You can remove a description, deadline or reminder by typing `d/` or `dd/` or `r/` without specifying anything after it.
+
+</div>
+
+* `ID`
+
+  * You can refer to [`ID` Term](#id-term) for more information. <br>
+
 * `n/NAME`
-  * Name can contain alphanumeric characters (a-Z, 0-9) and spaces.
+
+  * You can enter alphanumeric characters (a-Z, 0-9) and spaces for names. <br>
+
 * `[d/DESCRIPTION]`
-  * There is no restriction imposed on descriptions.
+
+  * You can enter any character for descriptions. <br>
+
 * `[c/]`
-  * Adding `c/` will reverse the completion status, if the project was incomplete the completion status will change to complete.
+
+  * You can change the completion status of a project/task by entering `c/`.
+
+  * If the project/task was incomplete, the completion status will change to complete.
+
 * `[dd/DEADLINE_DATE [dt/DEADLINE_TIME]]`
-  * The `dt\DEADLINE_TIME` is part of the the prefix `dd/`, and is optional.
-  * A deadline cannot be edited with only the time field, but a deadline can be edited with only the date field.
-  * The deadline will be replaced with an edit.
-  * The format for date of the deadline is YYYY-MM-DD, refer to [Date Terms](#Date-Terms) for more information on YYYY, MM and DD.
-  * The format for time of the deadline is HH:MM:SS in 24 hour format, refer to [Time Terms](#Time-Terms) for more information on HH, MM and SS.
-  * The date of the deadline cannot be earlier than the creation date of the project.
+
+  * Note that `dt/DEADLINE_TIME` is an optional part of the the `dd/`, you cannot enter a deadline with time only.
+
+  * You can enter a deadline with date only.
+
+  * You need to enter the date of the deadline using YYYY-MM-DD format. (refer to [Date Terms](#date-terms) for more information on YYYY, MM and DD)
+
+  * You need to enter the time of the deadline using HH:MM:SS format in 24 hours. (refer to [Time Terms](#time-terms) for more information on HH, MM and SS)
+
 * `[r/REMINDER_DATE_TIME]`
-  * Both date and time is compulsory for a reminder.
-  * The format for date and time of the reminder is YYYY-MM-DDTHH:MM:SS, refer to [Date and Time Terms](#Date-and-Time-Terms) for more information on YYYY, MM, DD, HH, MM, and SS.
-  * The date and time of the reminder needs to be later than the current time, refer to [Reminders](#reminders) section for more details on reminders.
+
+  * You need to enter both date and time for a reminder.
+
+  * You need to enter date and time of the reminder using YYYY-MM-DDTHH:MM:SS format. (refer to [Date and Time Terms](#Date-and-Time-Terms) for more information on YYYY, MM, DD, HH, MM, and SS)
+
 * `[t/TAG]`
-  * Similar to names, tags can contain alphanumeric characters (a-Z, 0-9) and spaces.
-  * When editing tags, the existing tags of the project will be removed i.e adding of tags is not cumulative.
-  * You can remove all the project’s tags by typing `t/` without specifying any tags after it.
+
+  * Similar to names, you can enter alphanumeric characters (a-Z, 0-9) and spaces in tags.
+
+  * Momentum will replace all the existing tags of the project/task with the new tags that you added.
+
+  <div markdown="block" class="alert alert-info">
+
+  :bulb: You can remove all the project’s tags by typing `t/` without specifying any tags after it.
+
+  </div>
 
 Example: `edit 3 n/NewMomentum d/NewDescription dd/2021-12-07 t/normal`
 
-Result: Updates the project with id 3. The name will be changed to "NewMomentum", the description will be changed to "NewDescription", all the tags will be removed and a tag named normal is added, and the deadline will be changed to "2021-12-07".
+Result: Momentum will edit the third project/task. The name will be changed to "NewMomentum", the description will be changed to "NewDescription", the deadline will be changed to "2021-12-07", all the tags will be removed and a tag named normal will be added.
 
 ##### Walkthrough of Editing a Task
 
-1. In task view, type `edit 3 n/NewMomentum d/NewDescription dd/2021-12-07 r/ t/normal` in the command box, and press the `Enter` key to execute it.
+1. In task view, you can type `edit 3 n/NewMomentum d/NewDescription dd/2021-12-07 r/ t/normal` in the command box, and press the <kbd>Enter</kbd> key to execute it.
 ![Walkthrough of Editing a Task Diagram Step 1](images/EditTaskDiagram1.png)
-2. The result box will display a message to indicate that the command has been executed successfully.
+
+2. The result box will display a message to indicate that you executed the command successfully.
 ![Walkthrough of Editing a Task Diagram Step 2](images/EditTaskDiagram2.png)
-3. A task will be updated as shown below.
+
+3. You edited a task in the task list as shown below.
 ![Walkthrough of Editing a Task Diagram Step 3](images/EditTaskDiagram3.png)
 
 #### Deleting a Project/Task: `delete`
+
+Done by Farrell Nah Jun Hao
 
 Deletes a project or task in the list.
 
 Format: `delete ID`
 
-* Deletes the project at the specified `ID`.
-* The id refers to the id number shown in the displayed project list.
-* The id **must be a positive integer** 1, 2, 3, …​
+* Deletes the project or task at the specified `ID`.
+* You can refer to [`ID` Term](#id-term) for more information.
 
 Example: `delete 2`
 
-Result: Deletes the second project in the list.
+Result: Deletes the second project or task in the list.
 
-#### Project/Task Organisation
+##### Walkthrough of deleting a project
+Suppose you would like to delete the first project in the list
 
-##### View All Projects : `list`
+![Delete1](images/Delete1.png)
 
-When viewing projects, this command shows a list of all projects in Momentum.
+1. Type `delete 1` into the command box and press >kbd>Enter</kbd>
 
-When viewing a project's tasks, this command shows a list of all the tasks for the project.
+    ![Delete2](images/Delete2.png)
+    
+2. The results box will display a message to indicate that the project has been successfully deleted. You should no long see the project in the display list.
 
-Note that this command is different from the `home` command. When viewing a project's tasks, the `home` command will change the view to show all the projects being tracked by Momentum. However, the `list` will only show all the tasks for the project.
+    ![Delete3](images/Delete3.png)
+
+#### View All : `list`
+
+Done by Farrell Nah Jun Hao
+
+When you are viewing projects, this command shows you a list of all projects in Momentum.
+
+When you are viewing a project's tasks, this command shows you a list of all the tasks for the project.
+
+<div markdown="block" class="alert alert-info">
+
+:bulb:
+Note that this command is different from the `home` command. When viewing a project's tasks, the `home` command will change the view to show you all the projects being tracked by Momentum. However, the `list` will only show you all the tasks for the project.
+
+</div>
 
 Format: `list`
 
-##### Sort Projects : `sort`
+##### Walkthrough of viewing all projects
+Suppose you ahd previously executed a [find command]() and would like to see all your projects again.
+
+![List1](images/List1.png)
+
+1. Type `list` into the command box and press <kbd>Enter</kbd>
+
+    ![List2](images/List2.png)
+    
+2. The results box will display a message to indicate that all your projects are being displayed. You should see that all your projects are being displayed in the display list.
+
+    ![List3](images/List3.png)
+
+#### Sort Projects : `sort`
+
+Done by Kang Su Min
 
 Sorts the list of displayed projects or tasks in the application.
 
@@ -346,7 +520,7 @@ Format: `sort [type/SORT_TYPE] [order/SORT_ORDER] [c/]`
   * `order/asc` will sort the list of projects in ascending order.
   * `order/dsc` will sort the list of projects in descending order.
 
-* The projects can be sorted by incomplete then completed.
+* The projects can be sorted by completion status.
     * This is the default sort, and is also the "dominant sort" that will ensure that all incomplete projects/tasks will be ordered before complete projects/tasks when completion status order is on.
     Within incomplete and complete projects/tasks, they will be ordered by specified order (alphabetical/deadline/created date, ascending/descending).
     * Run `sort c/` to toggle the default completion status sort.
@@ -363,21 +537,13 @@ Format: `sort [type/SORT_TYPE] [order/SORT_ORDER] [c/]`
 
 </div>
 
-Example:
-
-The following are 3 projects in the project book.
-
-Project 1. Name: `Ant Hole`, Deadline: `2020-02-02`, Created Date: `2000-02-02`
-Project 2. Name: `Brunch`, Deadline: `2010-01-01`, Created Date: `2002-09-09`
-Project 3. Name: `Create Logo` , Deadline: `2040-04-04`, Created Date: `2001-01-01`
-
-**Sorting by Default order**
+**Sorting by Default Order**
 
 Format: `sort`
 
 * Sorts projects in alphabetical, ascending order
 
-The following walkthrough shows how a user can sort projects in Momentum by specifying only the sort order.
+The following walkthrough shows how a user can sort projects in Momentum by the default order
 
 1. Key in command `sort` in the command window.
 ![Default Sort Step 1](images/DefaultSort1.png)
@@ -403,7 +569,7 @@ The following walkthrough shows how a user can sort projects in Momentum by togg
 3. All projects are ordered in default ascending alphabetical order without regard for completion status.
 ![Toggle Completion Status Step 3](images/ToggleCompletionStatus3.png)
 
-###### Sorting With Only Type Specified
+##### Sorting with Only Type Specified
 
 Format: `sort type/SORT_TYPE`
 
@@ -454,16 +620,18 @@ The following walkthrough shows how a user can sort projects in Momentum by spec
 3. All projects are ordered in descending created date order.
 ![Created Descending 3](images/CreatedDescending3.png)
 
-##### Filtering Projects: `find`
+#### Filtering Projects: `find`
+
+Done by Balasubramaniam Praveen
 
 Searches for projects or tasks in the project book based on certain parameters.
 
 Format: `find [match/FILTER_TYPE] [n/NAME [MORE_NAMES]...] [d/DESCRIPTION [MORE_DESCRIPTIONS]...] [t/TAG [MORE_TAGS]...] [c/COMPLETION_STATUS]`
 
 * There are three values for the `match` parameter.
-    * `match/all` shows an entry only if **all** of the parameters provided in the user's input matches the user's input.
-    * `match/any` shows an entry as long as **any** of the parameters provided in the user's input matches the user's input.
-    * `match/none` shows an entry only if **none** of the parameters provided in the user's input matches the user's input.
+    * `match/all` shows an entry only if **all** of the parameters provided in the user's input matches the entry.
+    * `match/any` shows an entry as long as **any** of the parameters provided in the user's input matches the entry.
+    * `match/none` shows an entry only if **none** of the parameters provided in the user's input matches the entry.
 
 <div markdown="block" class="alert alert-info">
 
@@ -486,7 +654,7 @@ Search parameters are not case sensitive.
 
 </div>
 
-###### Searching by Name
+##### Searching by Name
 
 * The `n/` command checks whether a project has a certain name. There can be multiple names added to this command. For example, `n/car window` will check for the projects that contain `car` or `window` in their names.
 * Searching by name only requires a partial match. This means that a project with the name `carpet` and `car` can potentially be the result of searching for the term `car`.
@@ -500,7 +668,7 @@ The following walkthrough shows how a user can use the find command to search fo
 3. All projects that contain `ad` in their name will be shown.
 ![Find by Name Step 3](images/FindByName3.png)
 
-###### Searching by Description
+##### Searching by Description
 
 * The `d/` command checks whether a project has a certain description. There can be multiple descriptions added to this command. For example, `d/sunday october` will check for the projects that contain `sunday` or `october` in their description.
 * Searching by description only requires a partial match, similar to searching by name.
@@ -514,7 +682,7 @@ The following walkthrough shows how a user can use the find command to search fo
 3. All projects that contain `discussion` in their description will be shown.
 ![Find by Description Step 3](images/FindByDescription3.png)
 
-###### Searching by Tag
+##### Searching by Tag
 
 * The `t/` command checks whether a project has a certain tag. There can be multiple tags added to this command. For example, `t/freelance errands` will check for the projects that contain the tags `freelance` or `errands`.
 * Searching by tags will require a full word match unlike searching by name or description. This means that searching for the tag `free` will not find a project with the tag `freelance`.
@@ -522,7 +690,7 @@ The following walkthrough shows how a user can use the find command to search fo
 <div markdown="block" class="alert alert-info">
 
 :bulb: **Tip:**
-Searches for tags require a full match whilst searches partial matches are sufficient for searches by name and description.
+Searches for tags require a full match whilst partial matches are sufficient for searches by name and description.
 
 </div>
 
@@ -535,7 +703,7 @@ The following walkthrough shows how a user can use the find command to search fo
 3. All projects that contain the tag `webdesign` will be shown.
 ![Find by Tag Step 3](images/FindByTag3.png)
 
-###### Searching by Completion Status
+##### Searching by Completion Status
 
 * There are keywords, completed and incomplete for`c/KEYWORD`. Other keywords are not accepted.
 * The `c/` command checks whether a project is completed. For example, `c/completed` will check for the projects that are completed.
@@ -550,13 +718,13 @@ The following walkthrough shows how a user can use the find command to search fo
 3. All projects that are completed will be shown.
 ![Find by Completion Step 3](images/FindByCompletion3.png)
 
-###### Searching with Multiple Parameters
+##### Searching with Multiple Parameters
 
 You can search for projects/tasks with multiple keywords for names, descriptions and tags in a single search.
 
-A match type can also be specified as mentioned at the [start of this section](#filtering-projects).
+A match type can also be specified as mentioned at the [start of this section](#filtering-projects-find).
 
-Please look at the examples below to get a better understanding of how you can make searches with multiple commands.
+Please look at the examples below to get a better understanding of how you can make searches with multiple parameters.
 
 Examples:
 
@@ -567,17 +735,23 @@ Let's say that you have the following projects in Momentum:
 3. Name: `Write Article`, Description: `Write an article about why Momentum is the best app out there`, Tags: `Press` and `Writing`
 
 * `find match/any n/song article d/startup t/design` will return all three projects. This is because project 1 contains the keyword `startup` in its description and the tag `design`, project 2 contains the keyword `song` in its name and project 3 contains the keyword `article` in its name.
-* `find match/all n/song article d/startup t/design` will not return any project as there is no project with `song` **and** `article` in its name **and** the `startup` in its description and the tag `design`.
+
+* `find match/all n/song article d/startup t/design` will not return any project as there is no project with `song` **and** `article` in its name **and** `startup` in its description and the tag `design`.
+
 * `find match/none n/song article d/startup t/design` will not return any project as there is no project that **does not** contain `song` and `article` in its name, `startup` in its description and the tag `design`.
+
 * `find match/any n/write d/rock` will return projects 2 and 3. This is because project 2 contains `write` in its name and `rock` in its description. Project 3 also contains the word `write` in its name.
+
 * `find match/all n/write d/rock` will only return project 2. This is because project 2 is the only project that contains both `write` in its name **and** `rock` in its description.
-* `find match/none n/write d/rock` will return projects 1. This is because only project 1 **does not** contain `write` in its name and `rock` in its descriptions.
+
+* `find match/none n/write d/rock` will return project 1. This is because only project 1 **does not** contain
+ `write` in its name and `rock` in its descriptions.
 
 <div markdown="block" class="alert alert-info">
 
 :bulb: **Tip:**
 If a certain search type is used more than once, the latest entry will be used.
-`find n/a n/b n/c` will only search for projects/task that contain`c` in their name.
+`find n/a n/b n/c` will only search for projects/tasks that contain`c` in their name.
 
 </div>
 
@@ -590,129 +764,133 @@ They will continue to be filtered after the `Edit` and `Delete` Commands are use
 
 ### Time Tracking
 
-You can track the time you spend working on a project or task by starting a timer when you start working, and then
- stopping the timer once you finish.
+Done by Farrell Nah Jun Hao
+
+You can track the time you spend working on a project or task by starting a timer when you start working, and then stopping the timer once you finish.
 
 Momentum remembers each timer that you start/stop and uses this information to calculate statistics.
 
 #### Starting a Timer for a Project: `start`
 
-Format: `/start ID`
+Format: `start ID`
 
 * Starts a timer for the project or task at the specified `ID`.
 * Only 1 timer can be running for each project or task at any time.
-* The id refers to the id number shown in the displayed list.
-* The id **must be a positive integer** 1, 2, 3, …​
+* You can refer to [`ID` Term](#id-term) for more information.
 
 <div markdown="block" class="alert alert-info">
 
-:bulb: **Tip:**
+:bulb:
 You can run timers for more than one project or task concurrently, if you are multi-tasking.
 
 </div>
 
 <div markdown="block" class="alert alert-info">
 
-:bulb: **Tip:**
-You can run timers for a project separately from its tasks. This allows you to track the time you spent on the
- project as a whole, as well as the time spent on each individual task.
+:bulb:
+You can run timers for a project separately from its tasks. This allows you to track the time you spent on the project as a whole, as well as the time spent on each individual task.
 
 </div>
 
-Example: `/start 2`
+Example: `start 2`
 
 Result: Starts a timer for the second project or task in the display list.
 
 #### Stopping a Timer for a Project: `stop`
 
-Format: `/stop ID`
+Format: `stop ID`
 
 * Stops a running timer for the project or task at the specified `ID`.
 * A timer can only be stopped if there is one already running.
-* The id refers to the id number shown in the displayed list.
-* The id **must be a positive integer** 1, 2, 3, …​
+* You can refer to [`ID` Term](#id-term) for more information.
 
-Example: `/stop 2`
+Example: `stop 2`
 
 Result: Stops the timer for the second project or task in the display list.
 
 #### Active Timers Panel
 
-On the left side of the window is the Active Timers Panel. This is where Momentum shows you all the timers that are
- currently running.
+On the left side of the window is the Active Timers Panel. This is where Momentum shows you all the timers that are currently running.
 
 ![ActiveTimersUI](images/ActiveTimersUI.png)
+Figure X: Location of the Active Timers Panel.
 
 This panel will show you the name of the project/task, as well as when the timer was started.
 
 #### Time Tracking Example
 
 Here is an example of how you can use the `start` and `stop` commands to track the time that you spend on a project.
-Suppose that you are going to start working on the project "Alpharad Youtube Endcard", which is the first item shown
- below:
+Suppose that you are going to start working on the project "Alpharad Youtube Endcard", which is the first item shown below:
 
 ![TimerExample1](images/TimerExample1.png)
 
 You can perform time tracking with the following steps:
 
-1. To start the timer, type `start 1` into the command box and press `enter`.
+1. To start the timer, type `start 1` into the command box and press <kbd>Enter</kbd>.
 
-![TimerExample2](images/TimerExample2.png)
+    ![TimerExample2](images/TimerExample2.png)
 
-1. You should see the following message in the result box, indicating that the timer has been successfully started.
+2. You should see the following message in the result box, indicating that the timer has been successfully started.
 
-![TimerExample3](images/TimerExample3.png)
+    ![TimerExample3](images/TimerExample3.png)
 
-1. You should also see the project's name and start time in the active timers panel:
+3. You should also see the project's name and start time in the active timers panel:
 
-![TimerExample4](images/TimerExample4.png)
+    ![TimerExample4](images/TimerExample4.png)
 
-1. Now that the timer has been successfully started, you can proceed to do your work. You can also choose to close
+   Now that the timer has been successfully started, you can proceed to do your work. You can also choose to close
  Momentum. The timer will continue to run even when Momentum is closed. Proceed to the next step when you are done
   with your work.
 
-1. To stop the timer, type `stop 1` into the command box and press `enter`.
+4. To stop the timer, type `stop 1` into the command box and press `Enter`.
 
-![TimerExample5](images/TimerExample5.png)
+    ![TimerExample5](images/TimerExample5.png)
 
-1. You should see the following message in the result box, indicating that the timer has been successfully stopped.
+5. You should see the following message in the result box, indicating that the timer has been successfully stopped.
 
-![TimerExample6](images/TimerExample6.png)
+    ![TimerExample6](images/TimerExample6.png)
 
-1. You should also see that the project has been removed from the active timers panel:
+6. You should also see that the project has been removed from the active timers panel:
 
-![TimerExample7](images/TimerExample7.png)
+    ![TimerExample7](images/TimerExample7.png)
 
-1. The statistics panel (see [statistics](#statistics)) will also be updated to reflect the time that you have spent
+8. The statistics panel (see [statistics](#statistics)) will also be updated to reflect the time that you have spent
  working on the
  project:
 
-![TimerExample8](images/TimerExample8.png)
+    ![TimerExample8](images/TimerExample8.png)
 
-## Reminders
+### Reminders
 
-* A reminder will be shown in the reminder panel of the sidebar at the date and time specified.
-* The reminder will be removed after it is shown in the sidebar.
-* If a reminder was missed, it will be greyed out.
-* Refer to [Walkthrough of Creating a Project](#walkthrough-of-creating-a-project) for more details on how a reminder will be shown.
-* Refer to [Walkthrough of Dismissing a Reminder](#walkthrough-of-dismissing-a-reminder) for more details on hoe to dismiss a reminder.
+Done by Cheong Ying Yi Clara
+
+* A reminder will be shown in the reminder panel of the sidebar at the date and time you specified.
+
+* Momentum will remove the reminder in the project/task after it is shown in the sidebar.
+
+* If you missed a reminder, it will be greyed out in the project/task.
+
+* You can refer to [Walkthrough of Creating a Project](#walkthrough-of-creating-a-project) for more details on how you can add a reminder.
+
+* You can refer to [Walkthrough of Dismissing a Reminder](#walkthrough-of-dismissing-a-reminder) for more details on how you can dismiss a reminder.
 
 <div markdown="block" class="alert alert-danger">
 
-:warning: **Warning**
-If there are multiple reminders set at the same date and time, only one of the reminders will appear in the reminder panel. Other reminders will be missed.
+:warning: If you set multiple reminders at the same date and time, Momentum will only show one of the reminders in the reminder panel and mark other reminders as missed.
 
 </div>
 
-## Undo/Redo
+### Undo/Redo
 
-Undo command undoes previous commmand and redo command redoes previously undone command.
+Done By Kang Su Min
 
-### Undoing the Previous Command: `undo`
+Undo command undoes previous command and redo command redoes previously undone command.
+
+#### Undoing the Previous Command: `undo`
 
 The undo command resets the application to the state before previous command was executed.
 
-Format: `/undo`
+Format: `undo`
 
 Example: `start 1`, `undo`
 
@@ -721,7 +899,7 @@ Result: Timer for project/task at index 1 is started, then stopped and removed a
 The following walkthrough shows how a user can start a timer for a project, then undo the command.
 
 1. Key in command `start 1` in the command window.
-![Undo 1](Undo1.png)
+![Undo 1](images/Undo1.png)
 2. The result box will display a message to indicate that the command has been executed successfully, and the timer for that project will appear at the side panel.
 ![Undo 2](images/Undo2.png)
 3. Key in command `undo` in the command window.
@@ -731,17 +909,16 @@ The following walkthrough shows how a user can start a timer for a project, then
 5. The timer has been removed from the project. Timer is no longer running.
 ![Undo 5](images/Undo5.png)
 
-### Redoing the Previous Command: `redo`
+#### Redoing the Previous Command: `redo`
 
 The redo command redoes previously undone command and resets the application to the state before the previous undo command.
 
-Format: `/redo`
+Format: `redo`
 
 Example: `sort type/deadline`, `undo`, `redo`
 
 Result: Projects are sorted by deadline, then the application is reset to the sorting order before sort command was executed, then reset back to sort by deadline after redo command.
 
-<div markdown="block" class="alert alert-info">
 The following walkthrough shows how a user can start a timer for a project, then undo the command.
 
 1. Key in command `sort type/deadline` in the command window.
@@ -764,30 +941,33 @@ The following walkthrough shows how a user can start a timer for a project, then
 :bulb: **Tip:**
 
 * Undo/redo feature keeps track of changes in state, and hence will not work on `help` command which does not change the state of the application.
-* Redo command only works if there the previous command is `undo`.
+* Redo command only works if the previous command is `undo`.
 
 </div>
 
-## Statistics
+### Statistics
+
+Done by Farrell Nah Jun Hao
 
 Momentum uses the data collected from your timers (see [time tracking](#time-tracking)) to calculate statistics. These
  statistics are automatically generated and updated whenever you make any changes to your projects and tasks, such as
-  when timers for a project/task are started or stopped.
+  when you start or stop a new timer.
  These statistics can be seen in a panel on the left side of the window, as shown here:
 
 ![StatisticsUI1](images/StatsUI1.png)
+Figure X: Location of the statistics panel
 
-The statistics displayed correspond to the projects or tasks currently shown in the list, and will automatically
- change when the items in the list changes (such as when you find specific projects or sort the list of projects).
+The statistics displayed correspond to the projects or tasks currently shown in the display list, and will automatically
+ change when the items in the display list changes (such as when you find specific projects or sort the list of projects).
 
 ![StatisticsUI2](images/StatsUI2.png)
+Figure X: The order of the statistics entries matches the order in the display list.
 
 You do not need to use any additional commands to update or view the statistics.
 
-### Timeframes
+#### Timeframes
 
-Momentum only tracks your statistics within a particular timeframe. By default, the timeframe will be set to weekly.
-You can change the timeframe through the [settings](#settings).
+Momentum only tracks your statistics within a particular timeframe. You can change the timeframe through the [settings](#settings).
 
 Momentum allows you to track the time spent within these timeframes:
 
@@ -795,14 +975,17 @@ Momentum allows you to track the time spent within these timeframes:
 * Weekly
 * Monthly
 
+By default, the timeframe will be set to weekly.
+
 Here are the statistics being tracked by Momentum:
 
-### Time Spent Per Project
+#### Time Spent Per Project
 
 This statistic tells you the total amount of time you have spent within the timeframe. For projects, this includes
  all the time you have spent on each individual task, as well as on the project as a whole.
 
 ![StatsUISplit](images/StatsUISplit.png)
+Figure X: Sections of the statistics panel.
 
 The statistics are displayed in 2 different formats:
 
@@ -810,97 +993,139 @@ The statistics are displayed in 2 different formats:
  and tasks with less time spent on them may not be shown.
 2. **Table**: Shows the exact (in minutes) amount of time spent on each project. Useful for calculations.
 
-## Settings
-You can adjust various settings in Momentum, which includes:
-* GUI Theme
-* Statistics Timeframe
+### Settings
+
+Done by Khoo De Hui
+
+Momentum allows you to change various settings so that you can make the application more suited to your preferences. Currently, the settings which you can adjust are:
+* The application GUI [theme](#user-interface-theme)
+* The [timeframe](#timeframes) of the statistics shown
 
 Format: `set [th/THEME] [st/TIMEFRAME]`
 * At least one of the optional fields must be provided.
-* There are two GUI themes available, light and dark. The commands to apply them are:
+* There are two GUI themes available, Light and Dark. The keywords to apply them are:
   * `th/light`
   * `th/dark`
-* There are three available timeframes for statistics, daily, weekly and monthly. The commands to apply them are:
-
+* There are three available timeframes for statistics, daily, weekly and monthly. The keywords to apply them are:
   * `st/daily`
   * `st/weekly`
   * `st/monthly`
 
 Example: `set th/light st/monthly`
-Result: Sets a dark theme to the GUI and changes the statistics pane to show the time spent on projects within the day.
 
-### Walkthrough of Changing Application Settings
-1. In order to set the GUI theme to light and the statistic timeframe to daily, enter `set th/light th/monthly` in the command box and press the `Enter` key to execute it.
+Result: Sets a light theme to the GUI and changes the statistics pane to show the time spent on projects within the month.
+
+#### Walkthrough of Changing Application Settings
+1. In order to set your GUI theme to light and your statistic timeframe to daily, type `set th/light th/monthly` in the command box and press the <kbd>Enter</kbd> key to execute it.
  ![Settings Walkthrough Step 1](images/SettingsDiagram1.png)
-2. The result box will display a message to indicate that the command has been executed successfully.
+2. The result box will display a message to indicate that your command has been executed successfully.
  ![Settings Walkthrough Step 2](images/SettingsDiagram2.png)
-3. The GUI theme has now been set to the light theme, and information in the statistics panel has been updated.
+3. Your GUI has now been set to the light theme, and information in your statistics panel has been updated.
  ![Settings Walkthrough Step 3](images/SettingsDiagram3.png)
 
-## Clear All Projects/Tasks : `clear`
+### Clear All Projects/Tasks : `clear`
 
-When viewing all projects, this command deletes all the projects in Momentum, including their tasks.
+Done by Farrell Nah Jun Hao
 
-When viewing a specific project's tasks, this command will delete all the tasks in the project. The project will itself will not be deleted.
-Removes all projects and tasks in Momentum.
+When you are viewing all projects, this command deletes all the projects in Momentum, including their tasks.
+
+When you are viewing a specific project's tasks, this command will delete all the tasks in the project. The project
+ itself will not be deleted.
 
 <div markdown="block" class="alert alert-danger">
-:warning: **Warning**
-This command will also delete the saved data for the projects or tasks. You can undo this operation while Momentum remains open. However, you will not be able to undo this if once you close Momentum.
+:warning:
+This command will also delete the saved data.
+You can undo this operation while Momentum remains open.
+However, you will not be able to undo this once you close Momentum.
+
+Please be careful when using this command, as you may loose large amounts of your data.
 
 </div>
 
 Format: `clear`
 
-## Dismissing a Reminder : `dismiss`
+#### Walkthrough of clearing Projects
+Suppose that you would like to clear all the projects in Momentum.
+
+1. Ensure that you are viewing all projects
+
+    ![ClearProject0](images/ClearProject0.png)
+    
+2. Type `clear` into the command box and press <kbd>Enter</kbd>
+    
+    ![ClearProject1](images/ClearProject1.png)
+
+3. The result box will display a message to indicate that all projects have been cleared. You should no long see any projects in the display list.
+
+    ![ClearProject2](images/ClearProject2.png)
+
+### Dismissing a Reminder : `dismiss`
+
+Done by Cheong Ying Yi Clara
+
+You can dismiss a reminder using this command.
 
 Format: `dismiss`
 
-* If the reminder panel of the sidebar is not visible, it cannot be dismissed.
-
-Result: Hides the reminder panel of the sidebar.
+Result: The reminder panel of the sidebar will be hidden.
 
 <div markdown="block" class="alert alert-danger">
 
-:warning: **Warning**
-A reminder that has been dismissed cannot be shown again in the reminder panel.
-Undo a dismissal to show an expired reminder in the project.
+:warning: You cannot dismiss a reminder if the reminder panel of the sidebar is not visible.
 
 </div>
 
-### Walkthrough of Dismissing a Reminder
+<div markdown="block" class="alert alert-danger">
+
+:warning: Momentum cannot show a reminder that you dismissed in the reminder panel again. You can undo a dismissal to show an expired reminder in the project/task.
+
+</div>
+
+#### Walkthrough of Dismissing a Reminder
 
 This walkthrough is a followup of [Walkthrough of Creating a Project](#walkthrough-of-creating-a-project).
 
-1. After the reminder panel is shown, type `dismiss` in the command box, and press the `Enter` key to execute it.
+1. After the reminder panel is shown, you can type `dismiss` in the command box, and press the <kbd>Enter</kbd> key to execute it.
 ![Walkthrough of Dismissing a Reminder Step 1](images/DismissDiagram1.png)
-1. The result box will display a message to indicate that the command has been executed successfully.
+
+2. The result box will display a message to indicate that that you executed the command successfully.
 ![Walkthrough of Dismissing a Reminder Step 2](images/DismissDiagram2.png)
-1. The reminder panel is now hidden.
+
+3. You dimissed the reminder as shown below.
 ![Walkthrough of Dismissing a Reminder Step 3](images/DismissDiagram3.png)
 
-## Showing and Hiding SideBar Components : `show`
+### Showing and Hiding Tags : `show`
+
+Done by Cheong Ying Yi Clara
 
 You can hide or show the tags panel of the sidebar.
 
 Format: `show t/`
 
-* `t/` would hide the tags if the tags panel was shown.
-* `t/` would show the tags if the tags panel was hidden.
+Result:
 
-Result: Shows or Hides the tags panel of the sidebar.
+* If the tags panel was visible, the tags panel will be hidden.
 
-### Walkthrough of Hiding Tags
+* If the tags panel was hidden, the tags panel will be shown.
 
-1. Type `show t/` in the command box, and press the `Enter` key to execute it.
+<div markdown="block" class="alert alert-info">
+
+:bulb: You can resize the tags panel by clicking and dragging the edges.
+
+</div>
+
+#### Walkthrough of Hiding Tags
+
+1. You can type `show t/` in the command box, and press the <kbd>Enter</kbd> key to execute it.
 ![Walkthrough of Hiding Tags Step 1](images/ShowDiagram1.png)
-2. The result box will display a message to indicate that the command has been executed successfully:
-   `Tags is removed from the sidebar.`
+
+2. The result box will display a message to indicate that you executed the command successfully.
 ![Walkthrough of Hiding Tags Step 2](images/ShowDiagram2.png)
-3. The tags panel is now hidden.
+
+1. You hide the tags panel as shown below.
 ![Walkthrough of Hiding Tags Step 3](images/ShowDiagram3.png)
 
-### Viewing help : `help`
+### Viewing Help : `help`
 
 Shows a message explaning how to access the help page.
 
@@ -908,7 +1133,7 @@ Shows a message explaning how to access the help page.
 
 Format: `help`
 
-## Exiting the Program : `exit`
+### Exiting the Program : `exit`
 
 All project, task and timer data are saved automatically after every command. There is no need to save manually.
 
@@ -925,16 +1150,23 @@ Result: Exits the program.
 **Q**: How do I transfer my data to another Computer? <br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Momentum home folder.
 
---------------------------------------------------------------------------------------------------------------------
+**Q**: Momentum is showing "Dates and Times should be in ISO8601 format. e.g. 2020-09-23T16:55:12". Whats wrong? <br>
+**A**: You have entered a date and/or time in the wrong format. Please refer to the [date and time terms](#date-and-time-terms) for the correct format to use.
+
+**Q**: Momentum showing "Unknown Command". Whats wrong? <br>
+**A**: You have entered a command that is not recognised by Momentum. Please refer to [command summary](#command-summary) for a list of commands that you can enter into Momentum.
 
 --------------------------------------------------------------------------------------------------------------------
 
 ## Glossary
 
+* **Theme**: Colour scheme of the application
 * **Command Line Interface(CLI)**: Command Line Interface processes commands in the form of text
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
+* **Window**: The area of your computer's screen that displays the [user interface](#user-interface-overview) of Momentum
 * **Project View**: View all projects in the project book.
 * **Task View**: View all tasks that are added to a single project.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command Summary
@@ -942,19 +1174,20 @@ Result: Exits the program.
 Action | Format | Example
 --------|-------|-----------
 **View tasks in a project**| `view ID` |`view 3`
-**View all projects**| `home` | `home`
+**View all projects**| `home` | -
 **Creating a Project/Task** | `add n/NAME [d/DESCRIPTION] [c/] [dd/DEADLINE_DATE [dt/DEADLINE_TIME]] [r/REMINDER_DATE_TIME] [t/TAG]​`|  `project n/Momentum d/CS2103T Team Project dd/2021-12-07 t/impt`
-**Editing a Project/Task** | `edit ID [n/NAME] [d/DESCRIPTION] [c/]  [dd/DEADLINE_DATE [dt/DEADLINE_TIME]] [r/REMINDER_DATE_TIME] [t/TAG]`| `edit 3 n/NewMomentum d/NewDescription dl/2021-12-07 r/2021-12-07T01:21:21 t/normal`
+**Editing a Project/Task** | `edit ID [n/NAME] [d/DESCRIPTION] [c/]  [dd/DEADLINE_DATE [dt/DEADLINE_TIME]] [r/REMINDER_DATE_TIME] [t/TAG]`| `edit 3 n/NewMomentum d/NewDescription dd/2021-12-07 r/2021-12-07T01:21:21 t/normal`
 **Delete a project/task** | `delete ID` | `delete 3`
-**Clear all projects/tasks** | `clear` | `clear`
-**Find a project/task** | `find [match/FILTER_TYPE] [n/NAME [MORE_NAMES]...] [d/DESCRIPTION [MORE_DESCRIPTIONS]...] [t/TAG [MORE_TAGS]...]  [c/]`  | `find match/any n/Momentum d/new t/normal`
-**Show all projects/tasks (after find)** | `list` | `list`
+**Clear all projects/tasks** | `clear` | -
+**Find a project/task** | `find [match/FILTER_TYPE] [n/NAME [MORE_NAMES]...] [d/DESCRIPTION [MORE_DESCRIPTIONS]...] [t/TAG [MORE_TAGS]...]  [c/COMPLETION_STATUS]`  | `find match/any n/Momentum d/new t/normal`
+**Show all projects/tasks (after find)** | `list` | -
 **Sort projects/tasks** | `sort [type/SORT_TYPE] [order/SORT_ORDER] [c/]` | `sort type/deadline order/dsc c/`
 **Start Timer** | `start ID` | `start 2`
 **Stop Timer** | `stop ID` | `stop 2`
-**Dismissing a Reminder** | `dismiss` | `dismiss`
-**Showing and Hiding SideBar Components** | `show t/` | `show t/`
-**Undo** | `undo` | `undo`
-**Redo** | `redo` | `redo`
+**Dismissing a Reminder** | `dismiss` | -
+**Showing and Hiding Tags** | `show t/` | -
+**Undo** | `undo` | -
+**Redo** | `redo` | -
+**Help** | `help` | -
 **Settings** | `set [th/THEME] [st/TIMEFRAME]` | `set th/dark st/daily`
-**Exit** | `exit` | `exit`
+**Exit** | `exit` | -
