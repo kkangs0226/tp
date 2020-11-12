@@ -172,15 +172,6 @@ Please refer to each command for these differences.
 
 </div>
 
-#### View Projects: `home`
-
-Done by: Farrell Nah Jun Hao
-
-View all the projects being tracked by Momentum.
-This is the default view you will see when Momentum is first opened.
-
-Format: `home`
-
 #### Viewing a Project's Tasks: `view`
 
 Done by: Farrell Nah Jun Hao
@@ -193,6 +184,42 @@ Format: `view ID`
 * The id **must be a positive integer** 1, 2, 3, …​
 
 Example: `view 1`
+
+##### Walkthrough of viewing a project's tasks
+Suppose you would like to view the tasks belonging to the 2nd project in the list
+
+![View1](images/View1.png)
+
+1. Type `view 1` into the command box and press <kbd>Enter</kbd>
+
+    ![View2](images/View2.png)
+
+2. The results box will display a message to indicate that you have successfully changed your view. You should see the tasks belonging to the project in the display list.
+
+    ![View3](images/View3.png)
+    
+#### View Projects: `home`
+
+Done by: Farrell Nah Jun Hao
+
+View all the projects being tracked by Momentum.
+This is the default view you will see when Momentum is first opened.
+
+Format: `home`
+
+##### Walkthrough of viewing projects
+Suppose you are in task view, and would like to go to project view.
+
+![Home0](images/Home0.png)
+
+1. Type `home` into the command box and press <kbd>Enter</kbd>
+
+    ![Home1](images/Home1.png)
+
+2. The results box will display a message to indicate that you have successfully changed your view. You should see the tasks belonging to the project in the display list.
+
+    ![Home2](images/Home2.png)
+
 
 #### Creating a Project/Task: `add`
 
@@ -316,7 +343,20 @@ Example: `delete 2`
 
 Result: Deletes the second project or task in the list.
 
-#### View All Projects : `list`
+##### Walkthrough of deleting a project
+Suppose you would like to delete the first project in the list
+
+![Delete1](images/Delete1.png)
+
+1. Type `delete 1` into the command box and press >kbd>Enter</kbd>
+
+    ![Delete2](images/Delete2.png)
+    
+2. The results box will display a message to indicate that the project has been successfully deleted. You should no long see the project in the display list.
+
+    ![Delete3](images/Delete3.png)
+
+#### View All : `list`
 
 Done by Farrell Nah Jun Hao
 
@@ -332,6 +372,19 @@ Note that this command is different from the `home` command. When viewing a proj
 </div>
 
 Format: `list`
+
+##### Walkthrough of viewing all projects
+Suppose you ahd previously executed a [find command]() and would like to see all your projects again.
+
+![List1](images/List1.png)
+
+1. Type `list` into the command box and press <kbd>Enter</kbd>
+
+    ![List2](images/List2.png)
+    
+2. The results box will display a message to indicate that all your projects are being displayed. You should see that all your projects are being displayed in the display list.
+
+    ![List3](images/List3.png)
 
 #### Sort Projects : `sort`
 
@@ -872,6 +925,21 @@ Please be careful when using this command, as you may loose large amounts of you
 </div>
 
 Format: `clear`
+
+#### Walkthrough of clearing Projects
+Suppose that you would like to clear all the projects in Momentum.
+
+1. Ensure that you are viewing all projects
+
+    ![ClearProject0](images/ClearProject0.png)
+    
+2. Type `clear` into the command box and press <kbd>Enter</kbd>
+    
+    ![ClearProject1](images/ClearProject1.png)
+
+3. The result box will display a message to indicate that all projects have been cleared. You should no long see any projects in the display list.
+
+    ![ClearProject2](images/ClearProject2.png)
 
 ### Dismissing a Reminder : `dismiss`
 
