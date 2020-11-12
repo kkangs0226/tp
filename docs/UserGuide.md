@@ -24,7 +24,7 @@ It is designed for people that prefer typing, so that frequent tasks can be done
    ![Ui](images/Ui.png)
 
 5. Type the command in the command box and press `Enter` to execute it. e.g. typing `help` and pressing `Enter` will open the help window.<br>
-   
+
    Some example commands you can try:
 
    * `view 1` : View the tasks of project at index 1.
@@ -70,7 +70,7 @@ Momentum uses a GUI (Graphical User Interface) to get input from you, and displa
 7. **Tags Panel**: Displays a collection of all the tags visible in the display list.
 8. **Bottom Bar**: Displays contextual information about what you are viewing, such as the specific project that you are viewing, and the number of items in the display list hidden due to finding or sorting commands.
 
-The active timers, statistics, tags and reminders panels can be resized to display more information by clicking and draging their edges.
+The active timers, statistics, tags and reminders panels can be resized to display more information by clicking and dragging their edges.
 
 ### User Interface Theme
 
@@ -198,106 +198,170 @@ Example: `view 1`
 
 Done by: Cheong Ying Yi Clara
 
-When looking at projects, this command will create a new project. When looking at the tasks in a project, this command will create a new task for the project.
+When Momentum is in [project view](#glossary), you can use the add command to create a new project. When Momentum is in [task view](#glossary), you can use the add command to create a new task for the project that you are viewing.
 
 Format: `add n/NAME [d/DESCRIPTION] [c/] [dd/DEADLINE_DATE [dt/DEADLINE_TIME]] [r/REMINDER_DATE_TIME] [t/TAG]`
 
 * `n/NAME`
-  * Name can contain alphanumeric characters (a-Z, 0-9) and spaces.
+
+  * You can enter alphanumeric characters (a-Z, 0-9) and spaces for names.
+
 * `[d/DESCRIPTION]`
-  * There is no restriction imposed on descriptions.
+
+  * You can enter any character for descriptions.
+
+  <div markdown="block" class="alert alert-info">
+
+  :bulb: You can enter an empty description.
+
+  </div>
+
 * `[c/]`
-  * The project is incomplete by default, adding `c/` will set the completion status to complete.
+
+  * The project/task added will be incomplete by default.
+
+  * You can add a project/task with completion status complete by entering `c/`.
+
 * `[dd/DEADLINE_DATE [dt/DEADLINE_TIME]]`
-  * The `dt/DEADLINE_TIME` is part of the the prefix `dd/`, and is optional.
-  * A deadline cannot contain only the time field, but a deadline can contain only the date field.
-  * The format for date of the deadline is YYYY-MM-DD, refer to [Date Terms](#date-terms) for more information on
-   YYYY, MM and DD.
-  * The format for time of the deadline is HH:MM:SS in 24 hour format, refer to [Time Terms](#time-terms) for more
-   information on HH, MM and SS.
-  * The date of the deadline cannot be earlier than the creation date of the project.
+
+  * Note that `dt/DEADLINE_TIME` is an optional part of the the `dd/`. You cannot enter a deadline with time only.
+
+  * You can enter a deadline with date only.
+
+  * You need to enter the date of the deadline using YYYY-MM-DD format. (refer to [Date Terms](#date-terms) for more information on YYYY, MM and DD)
+
+  * You need to enter the time of the deadline using HH:MM:SS format in 24 hours. (refer to [Time Terms](#time-terms) for more information on HH, MM and SS)
+
+  <div markdown="block" class="alert alert-danger">
+
+  :warning: You cannot enter a date earlier than the creation date of the project/task for deadlines.
+
+  </div>
+
 * `[r/REMINDER_DATE_TIME]`
-  * Both date and time are compulsory for a reminder.
-  * The format for date and time of the reminder is YYYY-MM-DDTHH:MM:SS, refer to [Date and Time Terms](#Date-and-Time-Terms) for more information on YYYY, MM, DD, HH, MM, and SS.
-  * The date and time of the reminder needs to be later than the current time, refer to [Reminders](#reminders) section for more details on reminders.
+
+  * You need to enter both date and time for a reminder.
+
+  * You need to enter date and time of the reminder using YYYY-MM-DDTHH:MM:SS format. (refer to [Date and Time Terms](#Date-and-Time-Terms) for more information on YYYY, MM, DD, HH, MM, and SS)
+
+  <div markdown="block" class="alert alert-info">
+
+  :bulb: `T` separates the date and time in a reminder.
+
+  </div>
+
+  <div markdown="block" class="alert alert-danger">
+
+  :warning: You cannot enter a date and time earlier than the current date and time for reminders. (refer to [Reminders](#reminders) for more details on reminders)
+
+  </div>
+
 * `[t/TAG]`
-  * Similar to names, tags can contain alphanumeric characters (a-Z, 0-9) and spaces.
 
-<div markdown="block" class="alert alert-info">
+  * Similar to names, you can enter alphanumeric characters (a-Z, 0-9) and spaces in tags.
 
-:bulb: **Tip:**
+  <div markdown="block" class="alert alert-info">
 
-* Projects and tasks can have any number of tags (including 0).
-* A project can have an empty description.
-* `T` separates the date and time in a reminder.
+  :bulb: You can enter any number of tags, including 0.
 
-</div>
+  </div>
 
 Example: `add n/Momentum d/CS2103T Team Project dd/2021-12-07 dt/11:01:12 r/2021-12-07T11:01:12 t/impt`
 
-Result: Creates a project named "Momentum" with a description "CS2103T Team Project", a tag "impt", deadline date "2020-10-07" with deadline time "11:01:12" and reminder "2020-10-07T11:01:12".
+Result: Momentum will create a project/task named "Momentum", with description "CS2103T Team Project", deadline date "2020-10-07" as well as deadline time "11:01:12", reminder "2020-10-07T11:01:12", and tag "impt".
 
 ##### Walkthrough of Creating a Project
 
-1. Type `add n/Momentum d/CS2103T Team Project c/ dd/2021-12-07 dt/11:01:12 r/2021-12-07T11:01:12 t/impt` in the command box, and press the `Enter` key to execute it.
+1. You can type `add n/Momentum d/CS2103T Team Project c/ dd/2021-12-07 dt/11:01:12 r/2021-12-07T11:01:12 t/impt` in the command box, and press the <kbd>Enter</kbd> key to execute it.
 ![Walkthrough of Creating a Project Diagram Step 1](images/AddProjectDiagram1.png)
-2. The result box will display a message to indicate that the command has been executed successfully.
+
+2. The result box will display a message to indicate that you executed the command successfully.
 ![Walkthrough of Creating a Project Diagram Step 2](images/AddProjectDiagram2.png)
-3. A project will be added to the project list as shown below.
+
+3. You added a project to the project list as shown below.
 ![Walkthrough of Creating a Project Diagram Step 3](images/AddProjectDiagram3.png)
-4. On 7 December 2021, at 11:01:12, the reminder panel will be shown and the reminder of the project will be removed.
+
+4. On 7 December 2021, at 11:01:12, the reminder panel will show the reminder you added and the reminder of the project will be removed.
 ![Walkthrough of Creating a Project Diagram Step 4](images/AddProjectDiagram4.png)
 
 #### Editing a Project/Task: `edit`
 
 Done by Cheong Ying Yi Clara
 
-Edits a project or task that was been previously created.
+When Momentum is in [project view](#glossary), you can use the edit command to edit a project. When Momentum is in [task view](#glossary), you can use the edit command to edit a task for the project that you are viewing.
 
 Format: `edit ID [n/NAME] [d/DESCRIPTION] [c/] [dd/DEADLINE_DATE [dt/DEADLINE_TIME]] [r/REMINDER_DATE_TIME] [t/TAG]`
 
-* At least one of the optional fields must be provided.
-* Existing values will be updated to the input values.
-* You can remove a description, deadline or reminder by typing `d/` or `dd/` or `r/` without specifying anything after it.
+* You need to provide at least one of the optional fields.
+
+* Your input will override the existing values of the project/task edited.
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: You can remove a description, deadline or reminder by typing `d/` or `dd/` or `r/` without specifying anything after it.
+
+</div>
 
 * `ID`
-  * The id refers to the id number shown in the displayed list.
-  * The id **must be a positive integer** 1, 2, 3, …​
+
+  * You need to enter an id which refers to the id number shown in the displayed project/task list.
+  * You need to enter a **positive integer** such as 1, 2, 3, …​
+
 * `n/NAME`
-  * Name can contain alphanumeric characters (a-Z, 0-9) and spaces.
+
+  * You can enter alphanumeric characters (a-Z, 0-9) and spaces for names.
+
 * `[d/DESCRIPTION]`
-  * There is no restriction imposed on descriptions.
+
+  * You can enter any character for descriptions.
+
 * `[c/]`
-  * Adding `c/` will reverse the completion status, if the project was incomplete the completion status will change to complete.
+
+  * You can change the completion status of a project/task by entering `c/`.
+
+  * If the project/task was incomplete, the completion status will change to complete.
+
 * `[dd/DEADLINE_DATE [dt/DEADLINE_TIME]]`
-  * The `dt/DEADLINE_TIME` is part of the the prefix `dd/`, and is optional.
-  * A deadline cannot be edited with only the time field, but a deadline can be edited with only the date field.
-  * The deadline will be replaced with an edit.
-  * The format for date of the deadline is YYYY-MM-DD, refer to [Date Terms](#date-terms) for more information on
-   YYYY, MM and DD.
-  * The format for time of the deadline is HH:MM:SS in 24 hour format, refer to [Time Terms](#time-terms) for more
-   information on HH, MM and SS.
-  * The date of the deadline cannot be earlier than the creation date of the project.
+
+  * Note that `dt/DEADLINE_TIME` is an optional part of the the `dd/`, you cannot enter a deadline with time only.
+
+  * You can enter a deadline with date only.
+
+  * You need to enter the date of the deadline using YYYY-MM-DD format. (refer to [Date Terms](#date-terms) for more information on YYYY, MM and DD)
+
+  * You need to enter the time of the deadline using HH:MM:SS format in 24 hours. (refer to [Time Terms](#time-terms) for more information on HH, MM and SS)
+
 * `[r/REMINDER_DATE_TIME]`
-  * Both date and time is compulsory for a reminder.
-  * The format for date and time of the reminder is YYYY-MM-DDTHH:MM:SS, refer to [Date and Time Terms](#Date-and-Time-Terms) for more information on YYYY, MM, DD, HH, MM, and SS.
-  * The date and time of the reminder needs to be later than the current time, refer to [Reminders](#reminders) section for more details on reminders.
+
+  * You need to enter both date and time for a reminder.
+
+  * You need to enter date and time of the reminder using YYYY-MM-DDTHH:MM:SS format. (refer to [Date and Time Terms](#Date-and-Time-Terms) for more information on YYYY, MM, DD, HH, MM, and SS)
+
 * `[t/TAG]`
-  * Similar to names, tags can contain alphanumeric characters (a-Z, 0-9) and spaces.
-  * When editing tags, the existing tags of the project will be removed i.e adding of tags is not cumulative.
-  * You can remove all the project’s tags by typing `t/` without specifying any tags after it.
+
+  * Similar to names, you can enter alphanumeric characters (a-Z, 0-9) and spaces in tags.
+
+  * Momentum will replace all the existing tags of the project/task with the new tags that you added.
+
+  <div markdown="block" class="alert alert-info">
+
+  :bulb: You can remove all the project’s tags by typing `t/` without specifying any tags after it.
+
+  </div>
 
 Example: `edit 3 n/NewMomentum d/NewDescription dd/2021-12-07 t/normal`
 
-Result: Updates the project with id 3. The name will be changed to "NewMomentum", the description will be changed to "NewDescription", all the tags will be removed and a tag named normal is added, and the deadline will be changed to "2021-12-07".
+Result: Momentum will edit the third project/task. The name will be changed to "NewMomentum", the description will be changed to "NewDescription", the deadline will be changed to "2021-12-07", all the tags will be removed and a tag named normal will be added.
 
 ##### Walkthrough of Editing a Task
 
-1. In task view, type `edit 3 n/NewMomentum d/NewDescription dd/2021-12-07 r/ t/normal` in the command box, and press the `Enter` key to execute it.
+1. In task view, you can type `edit 3 n/NewMomentum d/NewDescription dd/2021-12-07 r/ t/normal` in the command box, and press the <kbd>Enter</kbd> key to execute it.
 ![Walkthrough of Editing a Task Diagram Step 1](images/EditTaskDiagram1.png)
-2. The result box will display a message to indicate that the command has been executed successfully.
+
+2. The result box will display a message to indicate that you executed the command successfully.
 ![Walkthrough of Editing a Task Diagram Step 2](images/EditTaskDiagram2.png)
-3. A task will be updated as shown below.
+
+3. You edited a task in the task list as shown below.
 ![Walkthrough of Editing a Task Diagram Step 3](images/EditTaskDiagram3.png)
 
 #### Deleting a Project/Task: `delete`
@@ -696,16 +760,19 @@ You can perform time tracking with the following steps:
 
 Done by Cheong Ying Yi Clara
 
-* A reminder will be shown in the reminder panel of the sidebar at the date and time specified.
-* The reminder will be removed after it is shown in the sidebar.
-* If a reminder was missed, it will be greyed out.
-* Refer to [Walkthrough of Creating a Project](#walkthrough-of-creating-a-project) for more details on how a reminder will be shown.
-* Refer to [Walkthrough of Dismissing a Reminder](#walkthrough-of-dismissing-a-reminder) for more details on how to dismiss a reminder.
+* A reminder will be shown in the reminder panel of the sidebar at the date and time you specified.
+
+* Momentum will remove the reminder in the project/task after it is shown in the sidebar.
+
+* If you missed a reminder, it will be greyed out in the project/task.
+
+* You can refer to [Walkthrough of Creating a Project](#walkthrough-of-creating-a-project) for more details on how you can add a reminder.
+
+* You can refer to [Walkthrough of Dismissing a Reminder](#walkthrough-of-dismissing-a-reminder) for more details on how you can dismiss a reminder.
 
 <div markdown="block" class="alert alert-danger">
 
-:warning: **Warning**
-If there are multiple reminders set at the same date and time, only one of the reminders will appear in the reminder panel. Other reminders will be missed.
+:warning: If you set multiple reminders at the same date and time, Momentum will only show one of the reminders in the reminder panel and mark other reminders as missed.
 
 </div>
 
@@ -863,8 +930,8 @@ When you are viewing a specific project's tasks, this command will delete all th
 
 <div markdown="block" class="alert alert-danger">
 :warning:
-This command will also delete the saved data. 
-You can undo this operation while Momentum remains open. 
+This command will also delete the saved data.
+You can undo this operation while Momentum remains open.
 However, you will not be able to undo this once you close Momentum.
 
 Please be careful when using this command, as you may loose large amounts of your data.
@@ -879,15 +946,15 @@ Done by Cheong Ying Yi Clara
 
 Format: `dismiss`
 
-* If the reminder panel of the sidebar is not visible, it cannot be dismissed.
-
-Result: Hides the reminder panel of the sidebar.
+Result: The reminder panel of the sidebar will be hidden.
 
 <div markdown="block" class="alert alert-danger">
 
-:warning: **Warning**
-A reminder that has been dismissed cannot be shown again in the reminder panel.
-Undo a dismissal to show an expired reminder in the project or task.
+:warning:
+
+* You cannot dismiss a reminder if the reminder panel of the sidebar is not visible.
+
+* Momentum cannot show a reminder that you dismissed in the reminder panel again. You can undo a dismissal to show an expired reminder in the project/task.
 
 </div>
 
@@ -895,14 +962,16 @@ Undo a dismissal to show an expired reminder in the project or task.
 
 This walkthrough is a followup of [Walkthrough of Creating a Project](#walkthrough-of-creating-a-project).
 
-1. After the reminder panel is shown, type `dismiss` in the command box, and press the `Enter` key to execute it.
+1. After the reminder panel is shown, you can type `dismiss` in the command box, and press the <kbd>Enter</kbd> key to execute it.
 ![Walkthrough of Dismissing a Reminder Step 1](images/DismissDiagram1.png)
-1. The result box will display a message to indicate that the command has been executed successfully.
+
+2. The result box will display a message to indicate that that you executed the command successfully.
 ![Walkthrough of Dismissing a Reminder Step 2](images/DismissDiagram2.png)
-1. The reminder panel is now hidden.
+
+3. You dimissed the reminder as shown below.
 ![Walkthrough of Dismissing a Reminder Step 3](images/DismissDiagram3.png)
 
-### Showing and Hiding SideBar Components : `show`
+### Showing and Hiding Tags : `show`
 
 Done by Cheong Ying Yi Clara
 
@@ -910,18 +979,27 @@ You can hide or show the tags panel of the sidebar.
 
 Format: `show t/`
 
-* `t/` would hide the tags if the tags panel was shown.
-* `t/` would show the tags if the tags panel was hidden.
+Result:
 
-Result: Shows or Hides the tags panel of the sidebar.
+* If the tags panel was visible, the tags panel will be hidden.
+
+* If the tags panel was hidden, the tags panel will be shown.
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: You can resize the tags panel by clicking and dragging the edges.
+
+</div>
 
 #### Walkthrough of Hiding Tags
 
-1. Type `show t/` in the command box, and press the `Enter` key to execute it.
+1. You can type `show t/` in the command box, and press the <kbd>Enter</kbd> key to execute it.
 ![Walkthrough of Hiding Tags Step 1](images/ShowDiagram1.png)
-2. The result box will display a message to indicate that the command has been executed successfully:
+
+2. The result box will display a message to indicate that you executed the command successfully.
 ![Walkthrough of Hiding Tags Step 2](images/ShowDiagram2.png)
-3. The tags panel is now hidden.
+
+1. You hide the tags panel as shown below.
 ![Walkthrough of Hiding Tags Step 3](images/ShowDiagram3.png)
 
 ### Viewing Help : `help`
@@ -984,7 +1062,7 @@ Action | Format | Example
 **Start Timer** | `start ID` | `start 2`
 **Stop Timer** | `stop ID` | `stop 2`
 **Dismissing a Reminder** | `dismiss` | `dismiss`
-**Showing and Hiding SideBar Components** | `show t/` | `show t/`
+**Showing and Hiding Tags** | `show t/` | `show t/`
 **Undo** | `undo` | `undo`
 **Redo** | `redo` | `redo`
 **Help** | `help` | `help`
