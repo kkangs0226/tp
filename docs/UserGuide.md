@@ -141,6 +141,12 @@ You may also have to enter both dates and times together. When entered together,
 
 **Invalid**: `15:08:02T2020-08-02` Wrong order of date and time.
 
+## `ID` Term
+
+* You need to enter an id which refers to the id number shown in the displayed project/task list.
+
+* You need to enter a **positive integer** such as 1, 2, 3, …​
+
 ## Features<a name="2-Features"></a>
 
 ### Projects and Tasks<a name="3-Projects-and-Tasks"></a>
@@ -189,8 +195,7 @@ View the tasks for a project.
 
 Format: `view ID`
 
-* The id refers to the id number shown in the displayed project list.
-* The id **must be a positive integer** 1, 2, 3, …​
+* You can refer to [`ID` Term](#id-term) for more information.
 
 Example: `view 1`
 
@@ -204,7 +209,7 @@ Format: `add n/NAME [d/DESCRIPTION] [c/] [dd/DEADLINE_DATE [dt/DEADLINE_TIME]] [
 
 * `n/NAME`
 
-  * You can enter alphanumeric characters (a-Z, 0-9) and spaces for names.
+  * You can enter alphanumeric characters (a-Z, 0-9) and spaces for names. <br>
 
 * `[d/DESCRIPTION]`
 
@@ -220,7 +225,7 @@ Format: `add n/NAME [d/DESCRIPTION] [c/] [dd/DEADLINE_DATE [dt/DEADLINE_TIME]] [
 
   * The project/task added will be incomplete by default.
 
-  * You can add a project/task with completion status complete by entering `c/`.
+  * You can add a project/task with completion status complete by entering `c/`. <br>
 
 * `[dd/DEADLINE_DATE [dt/DEADLINE_TIME]]`
 
@@ -304,16 +309,15 @@ Format: `edit ID [n/NAME] [d/DESCRIPTION] [c/] [dd/DEADLINE_DATE [dt/DEADLINE_TI
 
 * `ID`
 
-  * You need to enter an id which refers to the id number shown in the displayed project/task list.
-  * You need to enter a **positive integer** such as 1, 2, 3, …​
+  * You can refer to [`ID` Term](#id-term) for more information. <br>
 
 * `n/NAME`
 
-  * You can enter alphanumeric characters (a-Z, 0-9) and spaces for names.
+  * You can enter alphanumeric characters (a-Z, 0-9) and spaces for names. <br>
 
 * `[d/DESCRIPTION]`
 
-  * You can enter any character for descriptions.
+  * You can enter any character for descriptions. <br>
 
 * `[c/]`
 
@@ -373,8 +377,7 @@ Deletes a project or task in the list.
 Format: `delete ID`
 
 * Deletes the project or task at the specified `ID`.
-* The id refers to the id number shown in the displayed list.
-* The id **must be a positive integer** 1, 2, 3, …​
+* You can refer to [`ID` Term](#id-term) for more information.
 
 Example: `delete 2`
 
@@ -670,8 +673,7 @@ Format: `start ID`
 
 * Starts a timer for the project or task at the specified `ID`.
 * Only 1 timer can be running for each project or task at any time.
-* The id refers to the id number shown in the displayed list.
-* The id **must be a positive integer** 1, 2, 3, …​
+* You can refer to [`ID` Term](#id-term) for more information.
 
 <div markdown="block" class="alert alert-info">
 
@@ -697,8 +699,7 @@ Format: `stop ID`
 
 * Stops a running timer for the project or task at the specified `ID`.
 * A timer can only be stopped if there is one already running.
-* The id refers to the id number shown in the displayed list.
-* The id **must be a positive integer** 1, 2, 3, …​
+* You can refer to [`ID` Term](#id-term) for more information.
 
 Example: `stop 2`
 
@@ -944,17 +945,21 @@ Format: `clear`
 
 Done by Cheong Ying Yi Clara
 
+You can dismiss a reminder using this command.
+
 Format: `dismiss`
 
 Result: The reminder panel of the sidebar will be hidden.
 
 <div markdown="block" class="alert alert-danger">
 
-:warning:
+:warning: You cannot dismiss a reminder if the reminder panel of the sidebar is not visible.
 
-* You cannot dismiss a reminder if the reminder panel of the sidebar is not visible.
+</div>
 
-* Momentum cannot show a reminder that you dismissed in the reminder panel again. You can undo a dismissal to show an expired reminder in the project/task.
+<div markdown="block" class="alert alert-danger">
+
+:warning: Momentum cannot show a reminder that you dismissed in the reminder panel again. You can undo a dismissal to show an expired reminder in the project/task.
 
 </div>
 
@@ -1029,7 +1034,6 @@ Result: Exits the program.
 
 **Q**: Momentum is showing "Dates and Times should be in ISO8601 format. e.g. 2020-09-23T16:55:12". Whats wrong? <br>
 **A**: You have entered a date and/or time in the wrong format. Please refer to the [date and time terms](#date-and-time-terms) for the correct format to use.
- and time format.
 
 **Q**: Momentum showing "Unknown Command". Whats wrong? <br>
 **A**: You have entered a command that is not recognised by Momentum. Please refer to [command summary](#command-summary) for a list of commands that you can enter into Momentum.
