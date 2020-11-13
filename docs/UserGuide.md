@@ -11,6 +11,32 @@ It is designed for people that prefer typing, so that frequent tasks can be done
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
+## Introduction
+
+Attention all freelancers, because here is an application you have always wanted, but never got to experience!
+
+Us freelancers are always busy managing multiple projects at once. On top of that, we need to be well aware of multiple deadlines, meeting dates with different companies, and sub-tasks under each project… the list is endless, but sadly, our brain capacity is exhaustive.
+
+As freelancers ourselves, we understand. We too have had times where we woke up feeling fresh, before realising (with a shiver down our spine) that we have completely forgotten about a certain project deadline. 
+
+This is why we have developed an application for freelancers, and freelancers only. 
+
+Leave it to Momentum to do the following for you:
+* Organisation of projects
+    * View projects’  sub-tasks, deadline, description with just a few keystrokes
+    * Find any projects and task in Momentum with a single command
+    * Sort projects in different orders to your convenience at any time
+* Project Management
+    * Set reminders to remind you of upcoming deadlines
+    * Sort projects by deadline to prioritise tasks 
+* Time Management
+    * Keep track of how much time you have been spending on each project using our time-tracking tools
+    * Gain insights into your time usage with our statistics feature
+* Personalisation
+    * Personalise Momentum’s settings to fit your preference.
+
+We present you Momentum, the application that will make sure you never lose your momentum in your work ever again.
+
 ## About This Document
 This user guide provides detailed explanation and walkthroughs on the features and functionalities of Momentum. If you wish to learn how to use Momentum, this guide is for you. Before proceeding on, here are a few things you should take note about this document.
 
@@ -675,11 +701,11 @@ The following walkthrough shows how you can use the find command to search for p
 The following walkthrough shows how you can use the find command to search for projects with `discussion` in their description.
 
 1. Key in the command `find d/discussion` in the command window.
-![Find by Description Step 1](images/FindByDescription1.png)
+![Find by Description Step 1](images/FindByDesc1.png)
 2. The result box will display a message to indicate that the command has been executed successfully:
-![Find by Description Step 2](images/FindByDescription2.png)
+![Find by Description Step 2](images/FindByDesc2.png)
 3. All projects that contain `discussion` in their description will be shown.
-![Find by Description Step 3](images/FindByDescription3.png)
+![Find by Description Step 3](images/FindByDesc3.png)
 
 ##### Searching by Tag
 
