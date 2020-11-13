@@ -11,6 +11,35 @@ It is designed for people that prefer typing, so that frequent tasks can be done
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
+## About This Document
+This user guide provides detailed explanation and walkthroughs on the features and functionalities of Momentum. If you wish to learn how to use Momentum, this guide is for you. Before proceeding on, here are a few things you should take note about this document.
+
+### Notations Used
+Throughout this document, you may come across these notations:
+
+* **Clickable Links**: Words or phrases that are blue in colour are links which you can click on that will take you over to the section or page as describe. For example, clicking on [this]() will take you back to the introduction of the user guide.
+
+* **Info Boxes**: These will display additional information that is good for you to know. There are two types of boxes, tip and warning boxes, and they are showed below:
+
+  <div markdown="block" class="alert alert-info">
+  
+  :bulb: These are tip boxes. They will provide you with useful tips.
+
+  </div>
+
+  <div markdown="block" class="alert alert-danger">
+  
+  :warning: These are warning boxes. They will contain information of things that you should be careful of.
+
+  </div>
+
+* **Keyboard Keys**: Words that are wrapped in a box like <kbd>this</kbd> points to a corresponding key on your keyboard.
+
+### Complex Terms
+Are we still hyperlinking those terms to the glossary?
+
+### Screenshots
+Screenshots of the application in this document shows the application being used in a macOS operating system. However, note that this application can be used on other major operating systems as well.
 
 ## Quick Start<a name="quick-start"></a>
 
@@ -55,28 +84,49 @@ Refer to the [Features](#features) below for a more comprehensive set of feature
 
 ## User Interface Overview
 
-Momentum uses a GUI (Graphical User Interface) to get input from you, and display information to you. Different parts of this GUI perform different functions, as explained below:
+Momentum uses a graphical user interface (GUI) to interact with you. This is where you will give your inputs, and where Momentum will display information to you. This section will give you a walkthrough on the GUI of Momentum.
+
+### User Interface Components
+
+The GUI is made up of multiple components, which is shown in Figure X below.
 
 ![OverviewUI](images/OverviewUI2.png)
+Figure X: GUI of Momentum with different components marked out.
 
-1. **Command Box**: The place where you enter in your commands.
-2. **Results Box**: Displays the result of executing the commands that you enter.
-3. **Display List**: Displays a list of projects or tasks.
-4. **Reminders Panel**: This is where reminders will appear. The panel will only be present when there are reminders that have not yet been dismissed.
-5. **Active Timers Panel**: Displays all the timers that are currently running.
+With reference to the numbered labels in Figure X, these are the GUI components and their functions:
+
+1. **Menu Bar**: The menu bar allows you to exit the application, or view this document. To exit the application, click on the `File` button and select "Exit". To view this document, click on the `Help` button and select "User Guide". A window containing the website address to this guide should appear.
+
+2. **Command Box**: This is where you will enter in your commands. After typing your command, hit <kbd>Enter</kbd> to execute them. If you enter an invalid command, your input will turn red.
+
+3. **Result Box**: This is where Momentum will give you feedback on commands that you execute.
+
+4. **Display List**: Displays a list your projects or tasks and all the information pertaining to them.
+
+5. **Reminders Panel**: This is where your reminders will appear. The panel will only show when you have reminders that have not yet been dismissed. (see [Reminders](#reminders))
+
+6. **Active Timers Panel**: Displays a list of all your running timers.
 (see [Active Timers Panel](#active-timers-panel))
-6. **Statistics Panel**: Displays the statistics data calculated by Momentum.
-(see [Statistics](#statistics))
-7. **Tags Panel**: Displays a collection of all the tags visible in the display list.
-8. **Bottom Bar**: Displays contextual information about what you are viewing, such as the specific project that you are viewing, and the number of items in the display list hidden due to finding or sorting commands.
 
-The active timers, statistics, tags and reminders panels can be resized to display more information by clicking and dragging their edges.
+7. **Statistics Panel**: Displays the statistics of your time usage calculated by Momentum. (see [Statistics](#statistics))
+
+8. **Tags Panel**: Shows a collection of all the tags that are currently present in the display list.
+
+9. **Bottom Bar**: Information about what you are currently viewing on the display list will be shown here. The left side of the bar tells you which project you are viewing, and the right side of the bar tells you how many items are present on the display list, out of the total number of items that you have.  
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: The active timers, statistics and tags panels can be resized so that they can show more information. To do so, click and drag the edges dividing the panels upwards or downwards.
+
+</div>
 
 ### User Interface Theme
 
-The GUI Momentum also comes with two themes, light and dark. These themes are shown below:
-![GUI Themes](images/GUIThemeDiagram.png)
-You can adjust the themes to your preference, by changing it in the application settings. (see [Settings](#settings))
+The GUI of Momentum also comes with two themes, Light and Dark. These themes are merely cosmetic and do not affect the application functionality in any way. The themes are shown below:
+![GUI Themes](images/UITheme.png)
+Figure X: Momentum GUI theme
+
+By default, the theme of Momentum is set to Dark. If you want to adjust the theme, you can do so by changing it in the application settings. (see [Settings](#settings))
 
 ## Command Format
 
@@ -457,11 +507,11 @@ Suppose you ahd previously executed a [find command]() and would like to see all
 
 Done by Kang Su Min
 
-Sorts the list of displayed projects or tasks in the application.
+This command allows you to sort the list of displayed projects or tasks in a particular sort type and order.
 
 Format: `sort [type/SORT_TYPE] [order/SORT_ORDER] [c/]`
 
-* There are 3 types of sort.
+* There are 3 sort types.
   * `type/alpha` will sort the list of projects in alphabetical order.
   * `type/deadline` will sort the list of projects according to their deadlines.
   * `type/created` will sort the list of projects according to their date of creation.
@@ -470,20 +520,19 @@ Format: `sort [type/SORT_TYPE] [order/SORT_ORDER] [c/]`
   * `order/asc` will sort the list of projects in ascending order.
   * `order/dsc` will sort the list of projects in descending order.
 
-* The projects can be sorted by completion status.
-    * This is the default sort, and is also the "dominant sort" that will ensure that all incomplete projects/tasks will be ordered before complete projects/tasks when completion status order is on.
-    Within incomplete and complete projects/tasks, they will be ordered by specified order (alphabetical/deadline/created date, ascending/descending).
-    * Run `sort c/` to toggle the default completion status sort.
+In addition to the above sort types and orders, the list can be sorted by completion status.
+* This is the "dominant sort" that will ensure that all incomplete projects/tasks are above complete projects/tasks, before sorting the projects/tasks in the specified sort type and order above.
+* The default sort order will sort the projects/tasks by completion status.
+* `sort c/` will toggle the default completion status sort.
+    * Once the completion status sort is off, the projects/tasks will be sorted in the specified sort type and order without regard for their completion status.
 
 <div markdown="block" class="alert alert-primary">
 
-:bulb: **Tip:**
-
+:bulb: 
+* When the application first starts, the completion status order is on. This completion status sort status (on/off) is maintained until it is toggled.
 * `type/alpha` and `order/asc` will be used as default if both sort type and order are not specified (i.e. command is `sort`)
-* Current sort type will be used if the `type` is not specified but `order` is specified.
-* `order/asc` will be used as default if the `order` is not specified but `type` is specified.
-* For `sort type/deadline`, projects without deadlines will be ordered alphabetically after the ordered list of projects with deadlines.
-* For both `sort type/deadline` and `sort type/created`, projects with same deadline or same created date will be sorted alphabetically.
+* For both `sort type/deadline` and `sort type/created`, projects with the same deadline or same created date will be sorted in alphabetical order.
+* For `sort type/deadline`, projects/tasks with deadlines will appear at the top of the list sorted in deadline order, while those without deadlines will be pushed to the end of the list sorted in alphabetical order
 
 </div>
 
@@ -491,47 +540,47 @@ Format: `sort [type/SORT_TYPE] [order/SORT_ORDER] [c/]`
 
 Format: `sort`
 
-* Sorts projects in alphabetical, ascending order
+This sorts projects in default ascending alphabetical order.
 
-The following walkthrough shows how a user can sort projects in Momentum by the default order
+The following walkthrough shows how you can sort projects in Momentum by the default order.
 
-1. Key in command `sort` in the command window.
+1. Key in command `sort` in the command window then press <kbd>Enter</kbd>.
 ![Default Sort Step 1](images/DefaultSort1.png)
 2. The result box will display a message to indicate that the command has been executed successfully:
 ![Default Sort Step 2](images/DefaultSort2.png)
-3. All projects are ordered in default ascending alphabetical order with incomplete tasks showing up at the top of the list.
+3. All projects are ordered in default ascending alphabetical order with incomplete tasks showing up at the top of the list (Completion status sort is on).
 ![Default Sort Step 3](images/DefaultSort3.png)
 
 ##### Sorting With Completion Status Toggle
 
-* Toggles the completion status order i.e. if the completion status order is "on" with incomplete projects/tasks showing up at the top of the list, the completion status order is turned "off", which sorts the projects/tasks in the specified order without regard for its completion status.
-
 Format: `sort c/`
 
-This toggles the completion status order and then sorts projects in default alphabetical, ascending order.
+This toggles the completion status order i.e. if the completion status order is "on", the completion status order is turned "off", vice versa.
 
-The following walkthrough shows how a user can sort projects in Momentum by toggling the completion status order.
+The following walkthrough shows how you can toggle the completion status order in Momentum.
 
-1. Key in command `sort c/` in the command window.
+1. Key in command `sort c/` in the command window then press <kbd>Enter</kbd>.
 ![Toggle Completion Status Step 1](images/ToggleCompletionStatus1.png)
+Note that currently all projects at the top of the list are incomplete tasks.
 2. The result box will display a message to indicate that the command has been executed successfully:
 ![Toggle Completion Status Step 2](images/ToggleCompletionStatus2.png)
-3. All projects are ordered in default ascending alphabetical order without regard for completion status.
+3. All projects are ordered in default ascending alphabetical order without regard for their completion status.
 ![Toggle Completion Status Step 3](images/ToggleCompletionStatus3.png)
 
 ##### Sorting with Only Type Specified
 
-Format: `sort type/SORT_TYPE`
+`order/asc` is assumed if the `order` is not specified.
+Hence, this sorts projects by the specified sort type, in ascending order.
 
-* Sorts projects in a specified order
-* Since order is not specified, default order is ascending
+Format: `sort type/SORT_TYPE`
 
 Example: `sort type/deadline`
 
-The following walkthrough shows how a user can sort projects in Momentum by specifying only the sort type.
+The following walkthrough shows how you can sort projects in Momentum by specifying only the sort type.
 
-1. Key in command `sort type/deadline` in the command window.
+1. Key in command `sort type/deadline` in the command window then press <kbd>Enter</kbd>.
 ![Deadline Sort 1](images/DeadlineSort1.png)
+Note that the projects are not sorted in asceding deadline order.
 2. The result box will display a message to indicate that the command has been executed successfully:
 ![Deadline Sort 2](images/DeadlineSort2.png)
 3. All projects are ordered in ascending deadline order.
@@ -539,36 +588,39 @@ The following walkthrough shows how a user can sort projects in Momentum by spec
 
 ##### Sorting With Only Order Specified
 
-Format: `sort order/SORT_ORDER`
+The current sort type is assumed if the `type` is not specified.
+If there is no existing project order (when the application restarts), order will be alphabetical by default.
 
-* Sorts projects in specified sort order, according to current sort type.
-* If there is no existing project order (when the application restarts), order will be alphabetical by default.
+Format: `sort order/SORT_ORDER`
 
 Example: `sort order/dsc`
 
-The following walkthrough shows how a user can sort projects in Momentum by specifying only the sort order.
+The following walkthrough shows how you can sort projects in Momentum by specifying only the sort order.
 
-1. Key in command `sort order/dsc` in the command window.
+1. Key in command `sort order/dsc` in the command window then press <kbd>Enter</kbd>.
 ![Deadline Sort Descending 1](images/DeadlineDescending1.png)
+Note that currently the projects are sorted in ascending deadline order.
 2. The result box will display a message to indicate that the command has been executed successfully:
 ![Deadline Sort Descending 2](images/DeadlineDescending2.png)
-3. All projects are ordered in descending deadline order (Projects were ordered by deadline previously).
+3. All projects are ordered in descending deadline order.
 ![Deadline Sort Descending 3](images/DeadlineDescending3.png)
 
 ##### Sorting With Both Type and Order Specified
 
-* Sorts projects in specified type and order.
+This sorts projects in the specified type and order.
 
 Example: `sort type/created order/dsc`
 
-The following walkthrough shows how a user can sort projects in Momentum by specifying both sort type and order.
+The following walkthrough shows how you can sort projects in Momentum by specifying both sort type and order.
 
-1. Key in command `sort type/created order/dsc` in the command window.
+1. Key in command `sort type/created order/dsc` in the command window then press <kbd>Enter</kbd>.
 ![Created Descending 1](images/CreatedDescending1.png)
+Note that the projects are not sorted by descending created date order.
 2. The result box will display a message to indicate that the command has been executed successfully:
 ![Created Descending 2](images/CreatedDescending2.png)
 3. All projects are ordered in descending created date order.
 ![Created Descending 3](images/CreatedDescending3.png)
+Note that for projects with the same created date, they are sorted in descending alphabetical order.
 
 #### Filtering Projects: `find`
 
@@ -893,25 +945,26 @@ Done by Cheong Ying Yi Clara
 
 Done By Kang Su Min
 
-Undo command undoes previous command and redo command redoes previously undone command.
+The undo/redo feature can be thought of as a "history traversal" function. After the execution of every command (excluding `help` and `exit`), all data at that point in time is stored in your Momentum history log.
+The undo and redo command allows you to traverse up or down this history log such that you can recover any data that has been stored in your Momentum history at any point in time.  
 
 #### Undoing the Previous Command: `undo`
 
-The undo command resets the application to the state before previous command was executed.
+The undo command undoes the last command that was executed. You can recover all data before the last command was executed.
 
 Format: `undo`
 
 Example: `start 1`, `undo`
 
-Result: Timer for project/task at index 1 is started, then stopped and removed after undo is executed.
+Result: Timer for project/task at index 1 is started, then stopped and removed after `undo` is executed.
 
 The following walkthrough shows how a user can start a timer for a project, then undo the command.
 
-1. Key in command `start 1` in the command window.
+1. Key in command `start 1` in the command window then press <kbd>Enter</kbd>.
 ![Undo 1](images/Undo1.png)
 2. The result box will display a message to indicate that the command has been executed successfully, and the timer for that project will appear at the side panel.
 ![Undo 2](images/Undo2.png)
-3. Key in command `undo` in the command window.
+3. Key in command `undo` in the command window then press <kbd>Enter</kbd>.
 ![Undo 3](images/Undo3.png)
 4. The result box will display a message to indicate that the command has been undone successfully.
 ![Undo 4](images/Undo4.png)
@@ -920,36 +973,36 @@ The following walkthrough shows how a user can start a timer for a project, then
 
 #### Redoing the Previous Command: `redo`
 
-The redo command redoes previously undone command and resets the application to the state before the previous undo command.
+The redo command redoes the last command that was previously undone. You can recover all data before the last `undo` command was executed.
 
 Format: `redo`
 
 Example: `sort type/deadline`, `undo`, `redo`
 
-Result: Projects are sorted by deadline, then the application is reset to the sorting order before sort command was executed, then reset back to sort by deadline after redo command.
+Result: Projects are first sorted by deadline, then the application is reset to the sorting order before sort command was executed when `undo` command is executed, then reset back to sort by deadline after `redo` command.
 
 The following walkthrough shows how a user can start a timer for a project, then undo the command.
 
-1. Key in command `sort type/deadline` in the command window.
+1. Key in command `sort type/deadline` in the command window then press <kbd>Enter</kbd>.
 ![Redo 1](images/Redo1.png)
-2. The result box will display a message to indicate that the command has been executed successfully. Projects have been sorted in ascending deadline order (Completion Status: On).
+Note: The projects are currently sorted in alphabetical, ascending order (default order).
+2. The result box will display a message to indicate that the command has been executed successfully. Projects are now sorted in ascending deadline order.
 ![Redo 2](images/Redo2.png)
-3. Key in command `undo` in the command window.
+3. Key in command `undo` in the command window then press <kbd>Enter</kbd>.
 ![Redo 3](images/Redo3.png)
-4. The result box will display a message to indicate that the command has been undone successfully. Projects have been reverted to their original order before the last sort command was executed.
+4. The result box will display a message to indicate that the command has been undone successfully. Projects are now sorted in their original order (alphabetical, ascending).
 ![Redo 4](images/Redo4.png)
-5. Key in command `redo` in the command window.
+5. Key in command `redo` in the command window then press <kbd>Enter</kbd>.
 ![Redo 5](images/Redo5.png)
 6. The result box will display a message to indicate that the command has been redone successfully.
 ![Redo 6](images/Redo6.png)
-7. Projects are again sorted in ascending deadline order (Completion Status: On).
+7. Projects are again sorted in ascending deadline order.
 ![Redo 7](images/Redo7.png)
 
 <div markdown="block" class="alert alert-primary">
 
-:bulb: **Tip:**
-
-* Undo/redo feature keeps track of changes in state, and hence will not work on `help` command which does not change the state of the application.
+:bulb:
+* Undo/redo feature keeps track of changes in data, and hence will not work on `help` or `exit` command which do not change the data in the application.
 * Redo command only works if the previous command is `undo`.
 
 </div>
@@ -1006,13 +1059,13 @@ The statistics are displayed in 2 different formats:
 
 Done by Khoo De Hui
 
-You can adjust various settings in Momentum, which includes:
-* GUI Theme
-* Statistics Timeframe
+Momentum allows you to change various settings so that you can make the application more suited to your preferences. Currently, the settings which you can adjust are:
+* The application GUI [theme](#user-interface-theme)
+* The [timeframe](#timeframes) of the statistics shown
 
 Format: `set [th/THEME] [st/TIMEFRAME]`
 * At least one of the optional fields must be provided.
-* There are two GUI themes available, light and dark. The keywords to apply them are:
+* There are two GUI themes available, Light and Dark. The keywords to apply them are:
   * `th/light`
   * `th/dark`
 * There are three available timeframes for statistics, daily, weekly and monthly. The keywords to apply them are:
@@ -1022,14 +1075,14 @@ Format: `set [th/THEME] [st/TIMEFRAME]`
 
 Example: `set th/light st/monthly`
 
-Result: Sets a dark theme to the GUI and changes the statistics pane to show the time spent on projects within the day.
+Result: Sets a light theme to the GUI and changes the statistics pane to show the time spent on projects within the month.
 
 #### Walkthrough of Changing Application Settings
-1. In order to set the GUI theme to light and the statistic timeframe to daily, enter `set th/light th/monthly` in the command box and press the `Enter` key to execute it.
+1. In order to set your GUI theme to light and your statistic timeframe to daily, type `set th/light th/monthly` in the command box and press the <kbd>Enter</kbd> key to execute it.
  ![Settings Walkthrough Step 1](images/SettingsDiagram1.png)
-2. The result box will display a message to indicate that the command has been executed successfully.
+2. The result box will display a message to indicate that your command has been executed successfully.
  ![Settings Walkthrough Step 2](images/SettingsDiagram2.png)
-3. The GUI theme has now been set to the light theme, and information in the statistics panel has been updated.
+3. Your GUI has now been set to the light theme, and information in your statistics panel has been updated.
  ![Settings Walkthrough Step 3](images/SettingsDiagram3.png)
 
 ### Clear All Projects/Tasks : `clear`
@@ -1169,6 +1222,7 @@ Result: Exits the program.
 
 ## Glossary
 
+* **Theme**: Colour scheme of the application
 * **Command Line Interface(CLI)**: Command Line Interface processes commands in the form of text
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
 * **Window**: The area of your computer's screen that displays the [user interface](#user-interface-overview) of Momentum
@@ -1182,20 +1236,20 @@ Result: Exits the program.
 Action | Format | Example
 --------|-------|-----------
 **View tasks in a project**| `view ID` |`view 3`
-**View all projects**| `home` | `home`
+**View all projects**| `home` | -
 **Creating a Project/Task** | `add n/NAME [d/DESCRIPTION] [c/] [dd/DEADLINE_DATE [dt/DEADLINE_TIME]] [r/REMINDER_DATE_TIME] [t/TAG]​`|  `project n/Momentum d/CS2103T Team Project dd/2021-12-07 t/impt`
 **Editing a Project/Task** | `edit ID [n/NAME] [d/DESCRIPTION] [c/]  [dd/DEADLINE_DATE [dt/DEADLINE_TIME]] [r/REMINDER_DATE_TIME] [t/TAG]`| `edit 3 n/NewMomentum d/NewDescription dd/2021-12-07 r/2021-12-07T01:21:21 t/normal`
 **Delete a project/task** | `delete ID` | `delete 3`
-**Clear all projects/tasks** | `clear` | `clear`
+**Clear all projects/tasks** | `clear` | -
 **Find a project/task** | `find [match/FILTER_TYPE] [n/NAME [MORE_NAMES]...] [d/DESCRIPTION [MORE_DESCRIPTIONS]...] [t/TAG [MORE_TAGS]...]  [c/COMPLETION_STATUS]`  | `find match/any n/Momentum d/new t/normal`
-**Show all projects/tasks (after find)** | `list` | `list`
+**Show all projects/tasks (after find)** | `list` | -
 **Sort projects/tasks** | `sort [type/SORT_TYPE] [order/SORT_ORDER] [c/]` | `sort type/deadline order/dsc c/`
 **Start Timer** | `start ID` | `start 2`
 **Stop Timer** | `stop ID` | `stop 2`
-**Dismissing a Reminder** | `dismiss` | `dismiss`
-**Showing and Hiding Tags** | `show t/` | `show t/`
-**Undo** | `undo` | `undo`
-**Redo** | `redo` | `redo`
-**Help** | `help` | `help`
+**Dismissing a Reminder** | `dismiss` | -
+**Showing and Hiding Tags** | `show t/` | -
+**Undo** | `undo` | -
+**Redo** | `redo` | -
+**Help** | `help` | -
 **Settings** | `set [th/THEME] [st/TIMEFRAME]` | `set th/dark st/daily`
-**Exit** | `exit` | `exit`
+**Exit** | `exit` | -
