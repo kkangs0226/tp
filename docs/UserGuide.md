@@ -11,6 +11,35 @@ It is designed for people that prefer typing, so that frequent tasks can be done
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
+## About This Document
+This user guide provides detailed explanation and walkthroughs on the features and functionalities of Momentum. If you wish to learn how to use Momentum, this guide is for you. Before proceeding on, here are a few things you should take note about this document.
+
+### Notations Used
+Throughout this document, you may come across these notations:
+
+* **Clickable Links**: Words or phrases that are blue in colour are links which you can click on that will take you over to the section or page as describe. For example, clicking on [this]() will take you back to the introduction of the user guide.
+
+* **Info Boxes**: These will display additional information that is good for you to know. There are two types of boxes, tip and warning boxes, and they are showed below:
+
+  <div markdown="block" class="alert alert-info">
+  
+  :bulb: These are tip boxes. They will provide you with useful tips.
+
+  </div>
+
+  <div markdown="block" class="alert alert-danger">
+  
+  :warning: These are warning boxes. They will contain information of things that you should be careful of.
+
+  </div>
+
+* **Keyboard Keys**: Words that are wrapped in a box like <kbd>this</kbd> points to a corresponding key on your keyboard.
+
+### Complex Terms
+Are we still hyperlinking those terms to the glossary?
+
+### Screenshots
+Screenshots of the application in this document shows the application being used in a macOS operating system. However, note that this application can be used on other major operating systems as well.
 
 ## Quick Start<a name="quick-start"></a>
 
@@ -55,28 +84,49 @@ Refer to the [Features](#features) below for a more comprehensive set of feature
 
 ## User Interface Overview
 
-Momentum uses a GUI (Graphical User Interface) to get input from you, and display information to you. Different parts of this GUI perform different functions, as explained below:
+Momentum uses a graphical user interface (GUI) to interact with you. This is where you will give your inputs, and where Momentum will display information to you. This section will give you a walkthrough on the GUI of Momentum.
+
+### User Interface Components
+
+The GUI is made up of multiple components, which is shown in Figure X below.
 
 ![OverviewUI](images/OverviewUI2.png)
+Figure X: GUI of Momentum with different components marked out.
 
-1. **Command Box**: The place where you enter in your commands.
-2. **Results Box**: Displays the result of executing the commands that you enter.
-3. **Display List**: Displays a list of projects or tasks.
-4. **Reminders Panel**: This is where reminders will appear. The panel will only be present when there are reminders that have not yet been dismissed.
-5. **Active Timers Panel**: Displays all the timers that are currently running.
+With reference to the numbered labels in Figure X, these are the GUI components and their functions:
+
+1. **Menu Bar**: The menu bar allows you to exit the application, or view this document. To exit the application, click on the `File` button and select "Exit". To view this document, click on the `Help` button and select "User Guide". A window containing the website address to this guide should appear.
+
+2. **Command Box**: This is where you will enter in your commands. After typing your command, hit <kbd>Enter</kbd> to execute them. If you enter an invalid command, your input will turn red.
+
+3. **Result Box**: This is where Momentum will give you feedback on commands that you execute.
+
+4. **Display List**: Displays a list your projects or tasks and all the information pertaining to them.
+
+5. **Reminders Panel**: This is where your reminders will appear. The panel will only show when you have reminders that have not yet been dismissed. (see [Reminders](#reminders))
+
+6. **Active Timers Panel**: Displays a list of all your running timers.
 (see [Active Timers Panel](#active-timers-panel))
-6. **Statistics Panel**: Displays the statistics data calculated by Momentum.
-(see [Statistics](#statistics))
-7. **Tags Panel**: Displays a collection of all the tags visible in the display list.
-8. **Bottom Bar**: Displays contextual information about what you are viewing, such as the specific project that you are viewing, and the number of items in the display list hidden due to finding or sorting commands.
 
-The active timers, statistics, tags and reminders panels can be resized to display more information by clicking and dragging their edges.
+7. **Statistics Panel**: Displays the statistics of your time usage calculated by Momentum. (see [Statistics](#statistics))
+
+8. **Tags Panel**: Shows a collection of all the tags that are currently present in the display list.
+
+9. **Bottom Bar**: Information about what you are currently viewing on the display list will be shown here. The left side of the bar tells you which project you are viewing, and the right side of the bar tells you how many items are present on the display list, out of the total number of items that you have.  
+
+<div markdown="block" class="alert alert-info">
+
+:bulb: The active timers, statistics and tags panels can be resized so that they can show more information. To do so, click and drag the edges dividing the panels upwards or downwards.
+
+</div>
 
 ### User Interface Theme
 
-The GUI Momentum also comes with two themes, light and dark. These themes are shown below:
-![GUI Themes](images/GUIThemeDiagram.png)
-You can adjust the themes to your preference, by changing it in the application settings. (see [Settings](#settings))
+The GUI of Momentum also comes with two themes, Light and Dark. These themes are merely cosmetic and do not affect the application functionality in any way. The themes are shown below:
+![GUI Themes](images/UITheme.png)
+Figure X: Momentum GUI theme
+
+By default, the theme of Momentum is set to Dark. If you want to adjust the theme, you can do so by changing it in the application settings. (see [Settings](#settings))
 
 ## Command Format
 
@@ -950,13 +1000,13 @@ The statistics are displayed in 2 different formats:
 
 Done by Khoo De Hui
 
-You can adjust various settings in Momentum, which includes:
-* GUI Theme
-* Statistics Timeframe
+Momentum allows you to change various settings so that you can make the application more suited to your preferences. Currently, the settings which you can adjust are:
+* The application GUI [theme](#user-interface-theme)
+* The [timeframe](#timeframes) of the statistics shown
 
 Format: `set [th/THEME] [st/TIMEFRAME]`
 * At least one of the optional fields must be provided.
-* There are two GUI themes available, light and dark. The keywords to apply them are:
+* There are two GUI themes available, Light and Dark. The keywords to apply them are:
   * `th/light`
   * `th/dark`
 * There are three available timeframes for statistics, daily, weekly and monthly. The keywords to apply them are:
@@ -966,14 +1016,14 @@ Format: `set [th/THEME] [st/TIMEFRAME]`
 
 Example: `set th/light st/monthly`
 
-Result: Sets a dark theme to the GUI and changes the statistics pane to show the time spent on projects within the day.
+Result: Sets a light theme to the GUI and changes the statistics pane to show the time spent on projects within the month.
 
 #### Walkthrough of Changing Application Settings
-1. In order to set the GUI theme to light and the statistic timeframe to daily, enter `set th/light th/monthly` in the command box and press the `Enter` key to execute it.
+1. In order to set your GUI theme to light and your statistic timeframe to daily, type `set th/light th/monthly` in the command box and press the <kbd>Enter</kbd> key to execute it.
  ![Settings Walkthrough Step 1](images/SettingsDiagram1.png)
-2. The result box will display a message to indicate that the command has been executed successfully.
+2. The result box will display a message to indicate that your command has been executed successfully.
  ![Settings Walkthrough Step 2](images/SettingsDiagram2.png)
-3. The GUI theme has now been set to the light theme, and information in the statistics panel has been updated.
+3. Your GUI has now been set to the light theme, and information in your statistics panel has been updated.
  ![Settings Walkthrough Step 3](images/SettingsDiagram3.png)
 
 ### Clear All Projects/Tasks : `clear`
@@ -1113,6 +1163,7 @@ Result: Exits the program.
 
 ## Glossary
 
+* **Theme**: Colour scheme of the application
 * **Command Line Interface(CLI)**: Command Line Interface processes commands in the form of text
 * **Mainstream OS**: Windows, Linux, Unix, OS-X
 * **Window**: The area of your computer's screen that displays the [user interface](#user-interface-overview) of Momentum
@@ -1132,7 +1183,7 @@ Action | Format | Example
 **Delete a project/task** | `delete ID` | `delete 3`
 **Clear all projects/tasks** | `clear` | -
 **Find a project/task** | `find [match/FILTER_TYPE] [n/NAME [MORE_NAMES]...] [d/DESCRIPTION [MORE_DESCRIPTIONS]...] [t/TAG [MORE_TAGS]...]  [c/COMPLETION_STATUS]`  | `find match/any n/Momentum d/new t/normal`
-**Show all projects/tasks (after find)** | `list` | `list`
+**Show all projects/tasks (after find)** | `list` | -
 **Sort projects/tasks** | `sort [type/SORT_TYPE] [order/SORT_ORDER] [c/]` | `sort type/deadline order/dsc c/`
 **Start Timer** | `start ID` | `start 2`
 **Stop Timer** | `stop ID` | `stop 2`

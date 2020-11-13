@@ -16,6 +16,11 @@ Given below are my contributions to the project. Code I have written can be foun
   * **Justification**: The settings feature enables the user to personalise the application to them, thereby offering a better user experience. In addition, being able to change the statistics timeframe can allow the user to have much better insights on how they are spending their time as well. 
   * **Highlights**: The implementation requires a good understanding on how the application handles user preferences and how the data is being stored and read. In addition, careful design considerations have to be made as well to ensure that the overall OOP integrity of the code base is maintained.
 
+* **New Feature**: Added the ability to change settings in the application. [#119](https://github.com/AY2021S1-CS2103T-T10-1/tp/pull/119)
+  * **What it does**: Allows the user to adjust some settings in the application, namely the timeframe of the statistics to show, and the theme of the application.
+  * **Justification**: The settings feature enables the user to personalise the application to them, thereby offering a better user experience. In addition, being able to change the statistics timeframe can allow the user to have much better insights on how they are spending their time as well. 
+  * **Highlights**: The implementation requires a good understanding on how the application handles user preferences and how the data is being stored and read. In addition, careful design considerations have to be made as well to ensure that the overall OOP integrity of the code base is maintained.
+
 * **Enhancements to existing features**: Redesigned the GUI of the application. [#45](https://github.com/AY2021S1-CS2103T-T10-1/tp/pull/45) [#58](https://github.com/AY2021S1-CS2103T-T10-1/tp/pull/58)
   * **Changes made**: Redesigned the layout of the GUI, as well as come up with 2 attractive colour schemes for it.
   * **Justification**: Redesigning the GUI layout is necessary in order for it to be able to display all the information that we want our users to see. In addition, we believe that an attractive GUI will offer a great user experience, which can attract new users as well as ensure existing users will want to continue using the application.
